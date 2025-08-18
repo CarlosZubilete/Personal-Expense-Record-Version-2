@@ -10,28 +10,42 @@ html {
 
 /* light mode */
 :root {
+  /* *Body* */
+  --bg-body-color: #f8f9fa;
+  --bg-body-gradient: linear-gradient(135deg, #ffffff, #e9ecef);
+  --text-body-color: #212121;
+
   /* *Nav-bar* */
   --navbar-bg: #6a00f4;
   --navbar-bg-shadow: rgba(0, 0, 0, 0.5);
   --navbar-text: #e5e5e5;
   --navbar-text-hover: #fff;
 
-  /* *Body* */
-  --bg-body-color: #f8f9fa;
-  --bg-body-gradient: linear-gradient(135deg, #ffffff, #e9ecef);
-  --text-body-color: #212121;
+  /* *Footer* */
+  --footer-bg: #f9fafb;
+  --footer-text-title: #111827;
+  --footer-text: #1f2937;
+  --footer-text-secondary: #374151;
+  --footer-text-shadow: #22d3ee;
 }
 
 .dark-mode {
+  /* *Body* */
+  --bg-body-color: #0d1117;
+  --bg-body-gradient: linear-gradient(135deg, #0d1117, #161b22);
+  --text-body-color: #8b949e;
+
   /* *Nav-bar* */
   --navbar-bg: #1f1f1f;
   --navbar-bg-shadow: rgba(255, 255, 255, 0.5);
   --navbar-text: #e5e5e5;
   --navbar-text-hover: #fff;
-  /* *Body* */
-  --bg-body-color: #0d1117;
-  --bg-body-gradient: linear-gradient(135deg, #0d1117, #161b22);
-  --text-body-color: #8b949e;
+
+  /* *Footer* */
+  --footer-bg: #1f2937;
+  --footer-text-title: #ffffff;
+  --footer-text: #e5e7eb;
+  --footer-text-secondary: #cbd5e1;
 }
 
 body {
@@ -41,3 +55,20 @@ body {
   transition: background-color 0.5s ease, color 0.5s ease,
     background-image 0.5s ease;
 }
+
+/*
+
+LIGHT 
+  --footer-bg: #1f2937;
+  --footer-text-title: #ffffff;
+  --footer-text: #e5e7eb;
+  --footer-text-secondary: #cbd5e1;
+  --footer-text-shadow: #22d3ee;
+
+DARK 
+  --footer-bg: #f9fafb;
+  --footer-text-title: #111827;
+  --footer-text: #1f2937;
+  --footer-text-secondary: #374151;
+
+*/
