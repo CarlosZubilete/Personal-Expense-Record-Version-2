@@ -6,10 +6,10 @@ import Logo from "../../assets/spend-svg-com.svg";
 export const Header = ({ isDarkMode, toggleTheme }) => {
   const navRef = useRef();
   const toggleNavbar = () => {
-    navRef.current.classList.toggle("navbar--responsive");
+    navRef.current.classList.toggle("navigation--responsive");
   };
   return (
-    <header className="header container">
+    <header className="header">
       {/* Logo */}
       <div className="header__logo">
         <img src={Logo} alt="logo" className="header__log__img" />

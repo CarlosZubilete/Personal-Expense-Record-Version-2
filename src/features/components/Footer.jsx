@@ -10,7 +10,7 @@ export const Footer = () => {
           <p className="footer__location">Argentina | Bs As | Tigre-Center</p>
           <p className="footer__email">
             <a href="mailto:carloszubiletesanhcez@gmail.com">
-              carloszubiletesanhcez@
+              carloszubiletesanchez@gmail.com
             </a>
           </p>
           <p className="footer__message">
