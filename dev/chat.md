@@ -1,32 +1,36 @@
-Me puedes ayudar para que el usaurio vea la fecha que esta haciendo el ingreso pero que no la pueda cambiar ?
+1. Chat no entinedo porque necesitarias dos useEffects ??
+
+2. Que te parece mi componete , es un hook customizado
 
 ```
-          <Col>
-            <FormGroup>
-              {/* <Field
-                name="date"
-                as={Label}
-                type="date"
-                id="price"
-                placeholder="Write down how much cost is"
-              /> */}
-              <Label > {} </Label>
-            </FormGroup>
-          </Col>
-```
+import { useState, useEffect } from "react";
 
-En este funcion solo me imprime los inputs pero no la fecha ?
+export const useNewPurchase = () => {
+  const [list, setList] = useState([]);
 
-```
+  useEffect(() => {
+    const saveList = localStorage.getItem("purchaseList");
+    if (saveList) setList(JSON.parse(saveList));
+  }, []);
 
-  const handlePurchaseForm = (values) => {
-    console.log(values);
+  const handlePurchaseForm = (values, { resetForm, setSubmitting }) => {
+    setSubmitting(true);
+
+    const document = { ...values, id: window.crypto.randomUUID() };
+
+    const newList = [...list, document];
+    setList(newList);
+    localStorage.setItem("purchaseList", JSON.stringify(newList));
+
+    setTimeout(() => {
+      console.log("New register => ", document);
+      console.log("Total => ", list);
+      resetForm();
+      setSubmitting(false);
+    }, 1500);
   };
 
+  return { handlePurchaseForm , list};
+};
 
-     <Formik
-        onSubmit={handlePurchaseForm}
-        validationSchema={purchaseSchema}
-        initialValues={{ purchase: "", price: "", date: new Date() }}
-      >
 ```
