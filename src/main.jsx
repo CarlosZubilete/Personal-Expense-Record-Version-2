@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 // *Purchases*
 import { PurchaseForm } from "./features/purchases/components/PurchaseForm.jsx";
+import { PurchasePage } from "./features/purchases/pages/PurchasePage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,11 @@ const router = createBrowserRouter([
         //Component: Home,
       },
       {
-        path: "/purchase",
+        path: "/purchase-page",
+        Component: PurchasePage,
+      },
+      {
+        path: "/purchase-add",
         Component: PurchaseForm,
       },
     ],

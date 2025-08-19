@@ -13,6 +13,7 @@
   top: 0;
   box-shadow: 0 3px 4px var(--navbar-bg-shadow);
   transition: background-color 0.3s ease, color 0.3s ease;
+  z-index: 1100;
 }
 
 .header__logo {

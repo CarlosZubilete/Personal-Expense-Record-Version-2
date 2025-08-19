@@ -1,32 +1,105 @@
-.purchaseForm {
-  max-width: 600px;
-  margin: auto;
-  padding: 1rem;
+.purchase-form {
+  /* border: 1px solid red; */
+  /* max-width: 800px; */
+  /* min-width: 50%; */
+  background-color: var(--purchase-form-bg);
+  margin: 1rem;
+  color: var(--text-body-color);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 4px var(--form-bg-shadow);
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.purchaseForm input,
-.purchaseForm button {
-  width: 100%;
-  margin-bottom: 1rem;
-  padding: 0.75rem;
+.purchase-form__title {
+  /* border: 1px solid red; */
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: start;
+}
+.purchase-form__title-text,
+.purchase-form__title-date {
+  /* border: 1px solid red; */
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 0 0.2rem;
+  color: var(--purchase-form-text);
+}
+
+.purchase-form__label {
+  font-weight: 600;
+}
+
+.purchase-form__input {
+  background-color: var(--input-bg);
+  color: var(--input-field-text);
+  border: 1px solid var(--input-border);
+  padding: 0.5rem;
   font-size: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-.purchaseForm button {
-  background-color: #007bff;
-  color: white;
+.purchase-form__input:focus {
+  outline: none;
+  border-color: var(--input-focus);
+  box-shadow: 0 0 0 2px var(--third-blue);
+}
+
+.purchase-form__actions {
+  display: flex;
+  justify-content: start;
+  align-self: center;
+}
+
+.purchase-form__actions-btn--submit {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: var(--shadow-strong);
+  transition: all 0.3s ease;
+}
+
+.purchase-form__actions-btn--submit:hover {
+  transform: translateY(1px);
+  box-shadow: var(--shadow-light);
+  background-color: var(--primary-hover);
+}
+
+.purchase-form__actions-btn--cancel {
+  padding: 0.6rem 1.5rem;
+  margin-left: 1rem;
+  color: var(--cancel-text);
+  background-color: var(--cancel-bg);
+  text-decoration: underline;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: var(--shadow-strong);
+  transition: background-color 0.3s ease, color 0.3s ease;
   border: none;
 }
 
-@media (max-width: 600px) {
-  .purchaseForm {
-    padding: 0.5rem;
+.purchase-form__actions-btn--cancel:hover {
+  background-color: var(--cancel-hover-bg);
+  color: var(--cancel-hover-text);
+}
+
+@media only screen and (max-width: 445px) {
+  .purchase-form__title-text {
+    display: none;
   }
 }
 
-/* WCAG: alto contraste y foco visible */
-.purchaseForm input:focus,
-.purchaseForm button:focus {
+/* WCAG: */
+
+/* .purchase-form input:focus,
+.purchase-form button:focus {
   outline: 2px solid #0056b3;
   outline-offset: 2px;
-}
+} */

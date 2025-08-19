@@ -13,7 +13,7 @@ export const Navbar = ({ toggleNavbar, navRef }) => {
         </li>
         <li className="navigation__item">
           <Link
-            to="/purchase"
+            to="/purchase-page"
             className="navigation__link"
             onClick={toggleNavbar}
           >

@@ -27,6 +27,37 @@ html {
   --footer-text: #1f2937;
   --footer-text-secondary: #374151;
   --footer-text-shadow: #22d3ee;
+
+  /* *Button - add document* */
+  --btn-addDocument-bg: #03dac6;
+  --btn-addDocument-bg-shadow: rgba(0, 0, 0, 0.7);
+  --btn-addDocument-text: #fff;
+
+  /* *Purchase - Form*  */
+  --purchase-form-bg: #ffffff;
+  --purchase-form-text: #21262d;
+  --form-bg-shadow: rgba(2, 4, 7, 0.06);
+
+  /* *Purchase - Form | Inputs* */
+  --input-bg: #f8f9fa;
+  --input-field-text: #2b2b2b;
+  --input-border: rgba(0, 34, 69, 0.235);
+  --input-focus: #0077cc;
+  --third-blue: rgba(0, 119, 204, 0.14);
+
+  /* *Purchase - Form | buttons / actions * */
+  --primary: #03dac5;
+  --primary-hover: #02d2bd;
+  --on-primary: #ffffff;
+
+  --cancel-bg: #ffffff;
+  --cancel-text: #1e1e1e;
+  --cancel-hover-bg: #f8f9fa;
+  --cancel-hover-text: rgba(214, 20, 20, 0.774);
+
+  /* *Purchase - Form | shadows* */
+  --shadow-strong: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-light: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .dark-mode {
@@ -46,6 +77,37 @@ html {
   --footer-text-title: #ffffff;
   --footer-text: #e5e7eb;
   --footer-text-secondary: #cbd5e1;
+
+  /* *Button - add document* */
+  --btn-addDocument-bg: #bb86fc;
+  --btn-addDocument-bg-shadow: rgba(255, 255, 255, 0.4);
+  --btn-addDocument-text: #e5e5e5;
+
+  /* *Purchase - Form*  */
+  --purchase-form-bg: #1f1f1f;
+  --purchase-form-text: #efefef;
+  --form-bg-shadow: rgba(0, 0, 0, 0.5);
+
+  /* *Purchase - Form | Inputs* */
+  --input-bg: #212529;
+  --input-field-text: #efefef;
+  --input-border: #343a40;
+  --input-focus: #8ab4ff;
+  --third-blue: rgba(138, 180, 255, 0.12);
+
+  /* *Purchase - Form | buttons / actions * */
+  --primary: #bb86fc;
+  --primary-hover: #a170f2;
+  --on-primary: #efefef;
+
+  --cancel-bg: #1f1f1f;
+  --cancel-text: rgba(214, 20, 20, 0.8);
+  --cancel-hover-bg: #373636;
+  --cancel-hover-text: #6a6a6a;
+
+  /* *Purchase - Form | shadows* */
+  --shadow-strong: 0 1px 2px rgba(0, 0, 0, 0.7);
+  --shadow-light: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 body {
@@ -55,20 +117,3 @@ body {
   transition: background-color 0.5s ease, color 0.5s ease,
     background-image 0.5s ease;
 }
-
-/*
-
-LIGHT 
-  --footer-bg: #1f2937;
-  --footer-text-title: #ffffff;
-  --footer-text: #e5e7eb;
-  --footer-text-secondary: #cbd5e1;
-  --footer-text-shadow: #22d3ee;
-
-DARK 
-  --footer-bg: #f9fafb;
-  --footer-text-title: #111827;
-  --footer-text: #1f2937;
-  --footer-text-secondary: #374151;
-
-*/
