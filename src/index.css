@@ -65,6 +65,21 @@ html {
   --card-bg-shadow-hover: 0 2px 8px rgba(0, 0, 0, 0.4);
   --card-title: #1f1f1f;
   --card-text: #444;
+
+  /* *Purchase List | buttons* */
+  --btn-edit-bg: #fff;
+  --btn-edit-border: #ffd60a;
+  --btn-edit-text: #fff;
+  --btn-edit-hover-bg: #e6b800;
+
+  --btn-delete-bg: transparent;
+  --btn-delete-border: #efefef;
+  --btn-delete-text: rgb(44, 24, 24);
+  --btn-delete-hover-text: rgb(109, 26, 26);
+
+  /* *Purchase List | Icons* */
+  --btn-edit-icon-bg: #ffd60a;
+  --btn-edit-icon-border: #efefef;
 }
 
 .dark-mode {
@@ -122,6 +137,21 @@ html {
   --card-bg-shadow-hover: 0 2px 8px rgba(255, 255, 255, 0.4);
   --card-title: #efefff;
   --card-text: #e5e5e5;
+
+  /* *Purchase List | Buttons* */
+  --btn-edit-bg: #00296b;
+  --btn-edit-border: #00296b;
+  --btn-edit-text: rgba(255, 255, 255, 0.5);
+  --btn-edit-hover-bg: #00296b; /* mismo color, mantiene consistencia */
+
+  --btn-delete-bg: transparent;
+  --btn-delete-border: #161b22;
+  --btn-delete-text: #600808;
+  --btn-delete-hover-text: #600808;
+
+  /* *Purchase List | Icons* */
+  --btn-edit-icon-bg: #00296b;
+  --btn-edit-icon-border: #00296b;
 }
 
 body {

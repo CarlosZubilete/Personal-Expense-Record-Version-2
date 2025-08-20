@@ -1,10 +1,8 @@
 .purchase-list {
-  /* border: 1px solid red; */
   padding: 2rem;
 }
 
 .purchase-list__card {
-  /* border: 1px solid red; */
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -12,14 +10,66 @@
 }
 
 .purchase-list__item {
-  /* border: 1px solid red; */
-  /* background-color: var(--card-bg); */
   background-color: transparent;
   border-radius: 12px;
-  /* box-shadow: 0 2px 5px var(--card-bg-shadow); */
   flex: 1 1 280px;
   max-width: 320px;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+}
+
+.purchase-list__buttons {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: start;
+}
+
+.purchase-list__buttons-delete,
+.purchase-list__buttons-edit {
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  font-weight: 600;
+  padding: 0.1rem;
+  cursor: pointer;
+  box-shadow: 0 3px 5px var(--btn-addDocument-bg-shadow);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.purchase-list__buttons-edit {
+  color: var(--btn-edit-text);
+  border: 1px solid var(--btn-edit-border);
+  background-color: var(--btn-edit-bg);
+}
+
+.purchase-list__buttons-delete {
+  background-color: var(--btn-delete-bg);
+  color: var(--btn-delete-text);
+  border: 1px solid var(--btn-delete-border);
+}
+
+.purchase-list__buttons-edit:hover,
+.purchase-list__buttons-delete:hover {
+  transform: translateY(-1px) translateX(-1px);
+  box-shadow: 0 1px 2px var(--btn-addDocument-bg-shadow);
+}
+
+.purchase-list__buttons-edit:hover {
+  background-color: var(--btn-edit-hover-bg);
+}
+
+.purchase-list__buttons-delete:hover {
+  color: var(--btn-delete-hover-text);
+}
+
+.purchase-list__buttons-edit-icon,
+.purchase-list__buttons-delete-icon {
+  font-size: 2.5rem;
+  border-radius: 50%;
+  padding: 0.3rem;
+}
+
+.purchase-list__buttons-edit-icon {
+  border: 1px solid var(--btn-edit-icon-border);
+  background-color: var(--btn-edit-icon-bg);
 }
