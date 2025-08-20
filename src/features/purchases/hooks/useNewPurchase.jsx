@@ -14,7 +14,7 @@ export const useNewPurchase = () => {
 
   const handlePurchaseForm = (values, { resetForm, setSubmitting }) => {
     setSubmitting(true);
-    const document = { ...values, id: window.crypto.randomUUID() };
+    const document = { ...values, _id: window.crypto.randomUUID() };
     const newList = [...list, document];
     try {
       setList(newList);

@@ -2,7 +2,7 @@
 import { object, string, number, date } from "yup";
 
 export const purchaseSchema = object({
-  purchase: string().required(),
+  name: string().required(),
   price: number().required().positive(),
-  createdOn: date().default(() => new Date()),
+  createdOn: date().default(() => new Date().toISOString()),
 });

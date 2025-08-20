@@ -1,0 +1,25 @@
+.purchase-list {
+  /* border: 1px solid red; */
+  padding: 2rem;
+}
+
+.purchase-list__card {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.purchase-list__item {
+  /* border: 1px solid red; */
+  /* background-color: var(--card-bg); */
+  background-color: transparent;
+  border-radius: 12px;
+  /* box-shadow: 0 2px 5px var(--card-bg-shadow); */
+  flex: 1 1 280px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+}

@@ -15,17 +15,18 @@ import { useNewPurchase } from "../hooks/useNewPurchase";
 import { Link } from "react-router-dom";
 
 export const PurchaseForm = () => {
-  // const handlePurchaseForm = (values) => {
-  //   console.log(values);
-  // };
-
   const { handlePurchaseForm } = useNewPurchase();
+
   return (
-    <Container className="d-flex justify-content-center container-fluid">
+    <Container className="d-flex justify-content-center">
       <Formik
         onSubmit={handlePurchaseForm}
         validationSchema={purchaseSchema}
-        initialValues={{ purchase: "", price: "", createdOn: new Date() }}
+        initialValues={{
+          name: "",
+          price: "",
+          createdOn: new Date().toISOString(),
+        }}
       >
         {({ isSubmitting }) => (
           <Form className="purchase-form">
@@ -45,18 +46,18 @@ export const PurchaseForm = () => {
             </Col>
             <Col>
               <FormGroup>
-                <Label for="purchase" className="purchase-form__label">
+                <Label for="name" className="purchase-form__label">
                   Purchase
                 </Label>
                 <Field
-                  name="purchase"
+                  name="name"
                   as={Input}
                   type="text"
-                  id="purchase"
+                  id="name"
                   placeholder="Write down your shopping"
                   className="purchase-form__input"
                 />
-                <ErrorMessage name="purchase" component={PurchaseFormError} />
+                <ErrorMessage name="name" component={PurchaseFormError} />
               </FormGroup>
             </Col>
             <Col>
