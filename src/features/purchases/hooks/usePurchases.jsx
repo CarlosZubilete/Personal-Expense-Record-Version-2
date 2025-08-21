@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import purchaseService from "../services/purchaseService";
 
-const savePurchase = async (id, values) => {
+const savePurchase = (id, values) => {
   if (id) return purchaseService.editByID(id, values);
   return purchaseService.create(values);
 };
@@ -10,84 +10,80 @@ export const usePurchases = (id) => {
   const [list, setList] = useState([]);
   const [purchase, setPurchase] = useState(null);
   const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(null);
+  // const [status, setStatus] = useState("idle"); // 'idle' | 'loading' | 'success' | 'error'
   const [submitting, setSubmitting] = useState(false);
 
-  // *Get list from localStorage*
-  useEffect(() => {
-    purchaseService
-      .list()
-      .then((data) => {
-        // console.log("get data from purchaseService: ok => ", data); // shows 5 times
-        setList(data);
-      })
-      .catch((error) => {
-        console.log("get data from purchaseService : error  =>", error);
-        setError(true);
-      });
-  }, []);
-
-  useEffect(() => {
-    if (id) {
-      purchaseService
-        .findById(id)
-        .then((doc) => setPurchase(doc))
-        .catch((error) => console.error("Error fetching purchase:", error));
+  const refreshPurchases = () => {
+    try {
+      const data = purchaseService.list();
+      setList(data);
+      setError(false);
+    } catch (err) {
+      console.error("Error loading purchases: ", err);
+      setError(true);
     }
-  }, [id]);
+  };
 
   // *Handle add or edit Form*
   const handlePurchaseForm = (values, { resetForm }) => {
     setSubmitting(true);
-    console.log("setSubmitting: ");
+    setSuccess(false);
+    setError(null);
+
+    setTimeout(() => {
+      try {
+        savePurchase(id, values);
+        refreshPurchases();
+        resetForm();
+        setSuccess(true);
+      } catch (error) {
+        console.error("Error saving purchase:", error);
+        setError(true);
+        setSuccess(false);
+      } finally {
+        setSubmitting(false);
+      }
+    }, 1000);
+  };
+
+  // *Handle delete button*
+  const handleDeletePurchase = (purchaseId) => {
     try {
-      savePurchase(id, values)
-        .then((doc) => {
-          setTimeout(() => {
-            setSubmitting(false);
-            setSuccess(true);
-            setPurchase(doc);
-            console.log("First them of handlePurchaseForm : doc =>", doc);
-          }, 1500);
-          // update list on memory
-          return purchaseService.list();
-        })
-        .then((data) => {
-          setList(data);
-          resetForm();
-          console.log("Second them of handlePurchaseForm : data =>", data);
-        })
-        .catch(() => {
-          console.error("Error saving purchase:", error);
-          setSubmitting(false);
-          setSuccess(false);
-        });
-    } catch (error) {
-      console.error("Error saving purchase:", error);
-      setSubmitting(false);
+      const ok = purchaseService.deleteByID(purchaseId);
+      if (ok) {
+        refreshPurchases();
+        setSuccess(true);
+      } else {
+        setError(true);
+        setSuccess(false);
+      }
+    } catch (err) {
+      console.error("Error deleting purchase:", err);
       setSuccess(false);
     }
   };
 
-  // *Handle delete button*
+  // *Get list from localStorage*
+  useEffect(() => {
+    refreshPurchases();
+  }, []);
 
-  const handleDeletePurchase = (purchaseId) => {
-    purchaseService
-      .deleteByID(purchaseId)
-      .then(() => purchaseService.list())
-      .then((data) => {
-        setList(data);
-        setSuccess(true);
-      })
-      .catch((error) => {
-        console.error("Error deleting purchase:", error);
-        setSuccess(false);
-      });
-  };
+  useEffect(() => {
+    if (id) {
+      try {
+        const doc = purchaseService.findById(id);
+        setPurchase(doc);
+      } catch (err) {
+        console.error("Error fetching purchase: ", err);
+      }
+    }
+  }, [id]);
 
   return {
     handlePurchaseForm,
     handleDeletePurchase,
+    refreshPurchases,
     list,
     purchase,
     success,
@@ -95,47 +91,3 @@ export const usePurchases = (id) => {
     submitting,
   };
 };
-
-/* 
-
-  useEffect(() => {
-    try {
-      const saveList = localStorage.getItem("purchaseList");
-      if (saveList) setList(JSON.parse(saveList));
-    } catch (error) {
-      console.log("Error loading purchase list: ", error);
-      setError(error);
-    }
-  }, []);
-
-  const handlePurchaseForm = (values, { resetForm, setSubmitting }) => {
-    setSubmitting(true);
-    const document = { ...values, _id: window.crypto.randomUUID() };
-    const newList = [...list, document];
-    try {
-      setList(newList);
-      localStorage.setItem("purchaseList", JSON.stringify(newList));
-    } catch (error) {
-      console.log("Error saving purchase: ", error);
-    }
-    setTimeout(() => {
-      console.log("New register => ", document);
-      console.log("Total => ", newList);
-      resetForm();
-      setSubmitting(false);
-    }, 1500);
-  };
-
-  const handlePurchaseDeleteButton = (_id) => {
-    console.log("handlePurchaseDeleteButton => ", _id);
-    const newList = list.filter((purchase) => purchase._id != _id);
-    try {
-      setList(newList);
-      localStorage.setItem("purchaseList", JSON.stringify(newList));
-    } catch (error) {
-      console.log("Error saving purchase: ", error);
-    }
-  };
-
-  return { handlePurchaseForm, list, handlePurchaseDeleteButton };
-*/

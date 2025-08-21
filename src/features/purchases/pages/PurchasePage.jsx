@@ -5,7 +5,7 @@ import { PurchaseList } from "../components/PurchaseList";
 import { usePurchases } from "../hooks/usePurchases";
 
 export const PurchasePage = () => {
-  const { list } = usePurchases();
+  const { list, handleDeletePurchase } = usePurchases();
 
   return (
     <div className="purchase-page container">
@@ -18,7 +18,7 @@ export const PurchasePage = () => {
         </Link>
       </section>
       <section className="purchase-page__list">
-        <PurchaseList listPurchase={list} />
+        <PurchaseList listPurchase={list} onDelete={handleDeletePurchase} />
       </section>
     </div>
   );

@@ -4,7 +4,7 @@ import { PurchaseCard } from "./PurchaseCard";
 import { PurchaseDeleteButton } from "./PurchaseDeleteButton";
 import { Link } from "react-router-dom";
 
-export const PurchaseList = ({ listPurchase }) => {
+export const PurchaseList = ({ listPurchase, onDelete }) => {
   return (
     <div className="purchase-list">
       <div className="purchase-list__card">
@@ -27,6 +27,7 @@ export const PurchaseList = ({ listPurchase }) => {
               <PurchaseDeleteButton
                 purchase={{ ...purchase }}
                 title="Delete Purchase"
+                onDelete={onDelete}
               />
             </div>
           </div>
