@@ -25,6 +25,10 @@ const router = createBrowserRouter([
         path: "/purchase-add",
         Component: PurchaseForm,
       },
+      {
+        path: "/purchase-edit/:id",
+        Component: PurchaseForm,
+      },
     ],
   },
 ]);

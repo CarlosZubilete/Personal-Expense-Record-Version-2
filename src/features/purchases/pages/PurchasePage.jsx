@@ -1,11 +1,11 @@
 import "../styles/PurchasePage.css";
 import { Link } from "react-router-dom";
 import { IoIosAddCircle } from "react-icons/io";
-import { useNewPurchase } from "../hooks/useNewPurchase";
 import { PurchaseList } from "../components/PurchaseList";
+import { usePurchases } from "../hooks/usePurchases";
 
 export const PurchasePage = () => {
-  const { list } = useNewPurchase();
+  const { list } = usePurchases();
 
   return (
     <div className="purchase-page container">

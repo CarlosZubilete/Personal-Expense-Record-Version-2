@@ -1,12 +1,15 @@
 import { ShowDelete, ShowSuccess } from "./PurchaseAlerts";
 import { MdDelete } from "react-icons/md";
-export const PurchaseDeleteButton = ({ purchase, onDelete }) => {
+import { usePurchases } from "../hooks/usePurchases";
+export const PurchaseDeleteButton = ({ purchase }) => {
+  const { handleDeletePurchase } = usePurchases();
   const handleClick = async () => {
     console.log("HandleClick = ", purchase);
     const result = await ShowDelete(purchase);
+
     if (result.isConfirmed) {
-      await onDelete(purchase._id);
-      ShowSuccess();
+      const ok = handleDeletePurchase(purchase._id);
+      if (ok) ShowSuccess();
     }
   };
 

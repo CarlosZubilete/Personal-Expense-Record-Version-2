@@ -11,24 +11,42 @@ import {
 } from "reactstrap";
 import { PurchaseFormError } from "./PurchaseFormError";
 import { purchaseSchema } from "../schemas/purchaseSchema";
-import { useNewPurchase } from "../hooks/useNewPurchase";
-import { Link } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { usePurchases } from "../hooks/usePurchases";
+import { useEffect } from "react";
+import { ShowSuccess } from "./PurchaseAlerts";
 
 export const PurchaseForm = () => {
-  const { handlePurchaseForm } = useNewPurchase();
+  const params = useParams();
+
+  const { handlePurchaseForm, purchase, success, submitting } = usePurchases(
+    params.id
+  );
+  // console.log("There is something params: id => ", params.id);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (success) {
+      ShowSuccess();
+      navigate("/purchase-page");
+    }
+  }, [success, navigate]);
+
+  const initialValues = {
+    name: purchase?.name || "",
+    price: purchase?.price || "",
+    createdOn: purchase?.createdOn || new Date().toISOString(),
+  };
+  // console.log("There is something into: purchase => ", purchase);
 
   return (
     <Container className="d-flex justify-content-center">
       <Formik
         onSubmit={handlePurchaseForm}
         validationSchema={purchaseSchema}
-        initialValues={{
-          name: "",
-          price: "",
-          createdOn: new Date().toISOString(),
-        }}
+        initialValues={initialValues}
+        enableReinitialize={true}
       >
-        {({ isSubmitting }) => (
+        {() => (
           <Form className="purchase-form">
             <Col className="purchase-form__title">
               <span className="purchase-form__title-text">Date: </span>
@@ -82,17 +100,17 @@ export const PurchaseForm = () => {
                 color="primary"
                 className="purchase-form__actions-btn purchase-form__actions-btn--submit"
               >
-                {!isSubmitting ? "Add" : "..."}
+                {!submitting ? "Add" : "..."}
               </Button>
               <Link
                 to={"/purchase-page"}
-                onClick={(e) => (isSubmitting ? e.preventDefault() : "")}
+                onClick={(e) => (submitting ? e.preventDefault() : "")}
               >
                 <Button
                   className="purchase-form__actions-btn purchase-form__actions-btn--cancel"
-                  disabled={isSubmitting}
+                  disabled={submitting}
                 >
-                  {isSubmitting ? "...." : "Cancel"}
+                  {submitting ? "...." : "Cancel"}
                 </Button>
               </Link>
             </Col>
