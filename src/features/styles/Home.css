@@ -1,0 +1,49 @@
+.home-root {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  background-color: var(--home-bg);
+  color: var(--home-color-text);
+}
+
+.home-hero {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.home-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.home-desc {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: #444;
+}
+
+.home-cta {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.home-cta-btn {
+  padding: 0.75rem 2rem;
+  background: var(--home-color-primary);
+  color: var(--home-color-btn-text);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px var(--home-color-shadow);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.home-cta-btn:hover {
+  background: var(--home-color-primary-hover);
+}
+
+/* Continue for other sections... */

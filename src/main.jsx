@@ -6,7 +6,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // *Purchases*
 import { PurchaseForm } from "./features/purchases/components/PurchaseForm.jsx";
 import { PurchasePage } from "./features/purchases/pages/PurchasePage.jsx";
-
+//*Home*
+import { Home } from "./features/components/Home.jsx";
+//*About Us*
+import { AboutUs } from "./features/components/AboutUS.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -14,8 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <h1>INDEX</h1>,
-        //Component: Home,
+        Component: Home,
       },
       {
         path: "/purchase-page",
@@ -28,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/purchase-edit/:id",
         Component: PurchaseForm,
+      },
+      {
+        path: "/about-us",
+        Component: AboutUs,
       },
     ],
   },

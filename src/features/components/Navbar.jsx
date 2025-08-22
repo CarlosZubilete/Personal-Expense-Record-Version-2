@@ -1,5 +1,5 @@
 import "../styles/Navbar.css";
-import { FaTimes, FaBars } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export const Navbar = ({ toggleNavbar, navRef }) => {
@@ -8,7 +8,7 @@ export const Navbar = ({ toggleNavbar, navRef }) => {
       <ul className="navigation__list">
         <li className="navigation__item">
           <Link className="navigation__link" onClick={toggleNavbar}>
-            Home
+            Inicio
           </Link>
         </li>
         <li className="navigation__item">
@@ -17,12 +17,16 @@ export const Navbar = ({ toggleNavbar, navRef }) => {
             className="navigation__link"
             onClick={toggleNavbar}
           >
-            Purchases
+            Compras
           </Link>
         </li>
         <li className="navigation__item">
-          <Link className="navigation__link" onClick={toggleNavbar}>
-            Contact
+          <Link
+            to="/about-us"
+            className="navigation__link"
+            onClick={toggleNavbar}
+          >
+            Nosotros
           </Link>
         </li>
 

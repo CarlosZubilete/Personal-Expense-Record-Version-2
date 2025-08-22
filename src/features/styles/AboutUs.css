@@ -1,0 +1,148 @@
+/* Container */
+.about-us {
+  background: var(--about-us-bg);
+  color: var(--about-us-color);
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+/* Header */
+.about-us__header {
+  padding: 1rem 0;
+}
+
+.about-us__title {
+  font-size: 2rem;
+  line-height: 1.05;
+  margin: 0;
+  color: var(--about-us-accent);
+  text-shadow: 0 6px 18px var(--home-color-text-shadow);
+}
+
+.about-us__subtitle {
+  margin-top: 0.5rem;
+  color: var(--about-us-muted);
+  max-width: 64ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Main content block (uses Bootstrap grid classes in the markup) */
+.about-us__content {
+  display: flex; /* requested: use flexbox */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  padding: 0 1rem 2rem;
+}
+
+.about-us__heading {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--about-us-accent);
+  margin: 0.25rem 0;
+}
+
+.about-us__text {
+  color: var(--about-us-color);
+  max-width: 70ch;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* List of technologies */
+.about-us__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* vertical stacking on mobile */
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+.about-us__list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.01)
+  );
+  backdrop-filter: blur(4px);
+  box-shadow: var(--about-us-card-shadow);
+  color: var(--about-us-color);
+  border-left: 4px solid transparent;
+}
+
+.about-us__list-item::before {
+  content: ""; /* decorative */
+}
+
+/* Accent the first element's left border to tie with brand color */
+.about-us__list-item:nth-child(1) {
+  border-left-color: var(--about-us-accent);
+}
+
+/* Cards / blocks look */
+.about-us__card {
+  background: var(--about-us-card-bg);
+  padding: 1rem;
+  border-radius: 0.6rem;
+  box-shadow: var(--about-us-shadow-soft);
+}
+
+/* Small responsive tweaks (uses Bootstrap classes in markup, but we add a couple of helpers) */
+@media (min-width: 768px) {
+  .about-us__content {
+    align-items: flex-start;
+    text-align: left;
+    padding: 0 2rem 3rem;
+  }
+
+  .about-us__list {
+    flex-direction: row; /* show tech list inline on larger screens */
+    flex-wrap: wrap;
+  }
+
+  .about-us__list-item {
+    min-width: 220px;
+    flex: 1 1 45%;
+  }
+}
+
+/* Buttons / interactive elements if  add them later */
+/* 
+.about-us__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: var(--about-us-accent);
+  color: var(--home-color-btn-text);
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.18s ease, background-color 0.18s ease;
+}
+
+.about-us__cta:hover {
+  transform: translateY(-3px);
+  background: var(--about-us-accent-hover);
+}
+
+
+.about-us__cta:focus,
+.about-us__list-item:focus {
+  outline: 3px solid rgba(99, 102, 241, 0.18);
+  outline-offset: 3px;
+}
+
+
+.about-us__spacer {
+  height: 1rem;
+} */

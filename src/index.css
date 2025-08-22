@@ -15,6 +15,14 @@ html {
   --bg-body-gradient: linear-gradient(135deg, #ffffff, #e9ecef);
   --text-body-color: #212121;
 
+  /* *Home * */
+  --home-bg: #fff;
+  --home-color-text: #444;
+  --home-color-primary: #4f46e5;
+  --home-color-primary-hover: #6366f1;
+  --home-color-text-shadow: rgba(79, 70, 229, 0.15);
+  --home-color-btn-text: #fff;
+
   /* *Nav-bar* */
   --navbar-bg: #6a00f4;
   --navbar-bg-shadow: rgba(0, 0, 0, 0.5);
@@ -80,6 +88,16 @@ html {
   /* *Purchase List | Icons* */
   --btn-edit-icon-bg: #ffd60a;
   --btn-edit-icon-border: #efefef;
+
+  /* *About-us* */
+  --about-us-bg: var(--home-bg);
+  --about-us-color: var(--home-color-text);
+  --about-us-accent: var(--home-color-primary);
+  --about-us-accent-hover: var(--home-color-primary-hover);
+  --about-us-muted: var(--footer-text-secondary);
+  --about-us-card-bg: var(--card-bg);
+  --about-us-card-shadow: var(--card-bg-shadow);
+  --about-us-shadow-soft: var(--shadow-light);
 }
 
 .dark-mode {
@@ -87,6 +105,14 @@ html {
   --bg-body-color: #0d1117;
   --bg-body-gradient: linear-gradient(135deg, #0d1117, #161b22);
   --text-body-color: #bcbcbc;
+
+  /* *Home * */
+  --home-bg: #18181b;
+  --home-color-text: #e6e7eb;
+  --home-color-primary: #6366f1;
+  --home-color-primary-hover: #818cf8;
+  --home-color-btn-text: #18181b;
+  --home-color-text-shadow: rgba(99, 102, 241, 0.25);
 
   /* *Nav-bar* */
   --navbar-bg: #1f1f1f;
@@ -152,6 +178,16 @@ html {
   /* *Purchase List | Icons* */
   --btn-edit-icon-bg: #00296b;
   --btn-edit-icon-border: #00296b;
+
+  /* *About-us* */
+  --about-us-bg: #121212;
+  --about-us-color: #f1f1f1;
+  --about-us-accent: #4dabf7;
+  --about-us-accent-hover: #339af0;
+  --about-us-muted: #a0a0a0;
+  --about-us-card-bg: #1e1e1e;
+  --about-us-card-shadow: rgba(0, 0, 0, 0.6);
+  --about-us-shadow-soft: rgba(0, 0, 0, 0.4);
 }
 
 body {

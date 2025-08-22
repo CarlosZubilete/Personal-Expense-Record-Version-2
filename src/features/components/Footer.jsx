@@ -28,12 +28,12 @@ export const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to="/" className="footer__link">
+              <Link to="/purchase-page" className="footer__link">
                 About
               </Link>
             </li>
             <li>
-              <Link to="/" className="footer__link">
+              <Link to="/about-us" className="footer__link">
                 Contact
               </Link>
             </li>
