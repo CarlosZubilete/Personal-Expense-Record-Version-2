@@ -104,7 +104,7 @@ export const Home = () => {
             className="home-cta-btn"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            onClick={() => navigate("/purchase")}
+            onClick={() => navigate("/purchase-add")}
             aria-label="Comenzar ahora - ir a registro de gasto"
           >
             Iniciar Segumiento.

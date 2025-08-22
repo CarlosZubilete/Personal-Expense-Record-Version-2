@@ -34,18 +34,20 @@
 .home__features {
   display: flex;
   justify-content: center;
+  /* border: 1px solid red; */
   flex-wrap: wrap;
   padding: 2rem;
 }
 
 .home__feature {
+  /* border: 1px solid red; */
   flex: 1 1 200px;
   max-width: 300px;
   text-align: center;
   padding: 1rem;
   margin: 0.5rem;
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--card-bg);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
 }
@@ -62,6 +64,7 @@
 .home__feature-title {
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
+  color: var(--home-color-text, #333);
 }
 
 .home__feature-desc {

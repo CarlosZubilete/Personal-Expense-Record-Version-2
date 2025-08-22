@@ -1,27 +1,70 @@
 .purchase-page {
   /* border: 1px solid red; */
   border-radius: 0.5;
-  margin: 1rem auto;
+  /* margin: 1rem auto; */
   padding: 1.5rem;
+  min-height: 100vh;
+  /* background: var(--page-bg, #f5f5f5); */
 }
+
+.purchase-page__container {
+  /* border: 1px solid red; */
+  display: flex;
+  gap: 2rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
+  height: 100vh; /* Changed to full viewport height */
+  position: relative; /* Added for better positioning control */
+  /* bottom: 2rem; */
+  height: fit-content;
+}
+
+.purchase-page__sidebar {
+  /* border: 1px solid red; */
+  flex: 0 0 25rem;
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  /* max-height: calc(100vh - 4rem); */
+  position: sticky;
+  /* height: fit-content; */
+  /* top: 2rem; */
+}
+
 .purchase-page__header {
   /* border: 1px solid blue; */
-  border-radius: 2rem;
+  flex-shrink: 0; /* Prevent header from shrinking */
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem;
+  align-items: start;
+  justify-content: space-evenly;
+  padding: 1rem 0.5rem;
+  /* background: var(--sidebar-header-bg, #fff); */
+  background-color: transparent;
+  border-radius: 0.5rem;
 }
 
 .purchase-page__title {
   /* border: 1px solid red; */
-  font-size: 2.2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--text-body-color);
+}
+
+.purchase-page__filter {
+  /* border: 1px solid red; */
+  /* background: var(--filter-bg, #f9fafb); */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
 }
 
 .purchase-page__btn {
   border-radius: 50%;
-  /* border: 1px solid #03dac6; */
   border: 1px solid var(--btn-addDocument-bg);
   background-color: transparent;
   padding: 0.2rem;
@@ -38,22 +81,107 @@
 
 .purchase-page__icon {
   /* text-emphasis: none; */
-  font-size: 3rem;
+  font-size: 2rem;
   border-radius: 50%;
-  color: #fff;
-  /* background-color: #03dac6; */
-  background-color: var(--btn-addDocument-bg);
-  padding: 0.3rem;
-  transition: transform 0.2s ease-in-out;
+  color: var(--primary, #4f46e5);
+  transition: transform 0.2s ease;
 }
 
-@media only screen and (max-width: 445px) {
+.purchase-page__icon:hover {
+  transform: scale(1.1);
+}
+
+.purchase-page__main {
+  border-left: 1px solid var(--text-body-color);
+  padding: 1rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* min-width: 0; */
+  width: 100%;
+  max-height: calc(100vh - 4rem);
+  overflow: hidden;
+}
+
+.purchase-page__filter {
+  flex: 1;
+  overflow-y: auto; /* Make filter area scrollable if needed */
+  padding-right: 0.5rem;
+}
+
+.purchase-page__list {
+  flex: 1;
+  overflow-y: auto;
+  width: 100%;
+  /* padding-right: 1rem; */
+  scroll-behavior: smooth;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .purchase-page {
-    margin: 0.5rem auto;
-  }
-  .purchase-page__header {
-    justify-content: space-around;
-    align-items: center;
+    /* border: 1px solid red; */
+    margin: 0;
     padding: 0;
+  }
+
+  .purchase-page__container {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .purchase-page__sidebar {
+    /* border: 1px solid red; */
+    position: relative;
+    top: 0;
+    width: 100%;
+    max-height: none;
+  }
+
+  /* .purchase-page__filter {
+    max-height: 60vh; 
+    overflow-y: auto;
+  } */
+
+  .purchase-page__main {
+    /* max-height: none; */
+    border: none;
+    width: 100%;
+  }
+
+  .purchase-page__list {
+    max-height: 80vh;
+    width: 100%;
+  }
+}
+
+@media (max-width: 425px) {
+  .purchase-page__container {
+    /* border: 1px solid red; */
+    padding: 0;
+    margin: 0;
+  }
+
+  .purchase-page__header {
+    /* border: 1px solid blue; */
+    padding: 0.5rem;
+  }
+
+  .purchase-page__title {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .purchase-page__main {
+    /* border: 1px solid red; */
+    min-width: 80%;
+    padding: 0.5rem;
+  }
+  .purchase-page__list {
+    /* border: 1px solid red; */
+    /* width: 100%; */
+    padding: 0.5rem;
   }
 }

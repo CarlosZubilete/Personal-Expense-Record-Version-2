@@ -128,7 +128,7 @@ html {
 
   /* *Button - add document* */
   --btn-addDocument-bg: #bb86fc;
-  --btn-addDocument-bg-shadow: rgba(255, 255, 255, 0.4);
+  /* --btn-addDocument-bg-shadow: rgba(255, 255, 255, 0.4); */
   --btn-addDocument-text: #e5e5e5;
 
   /* *Purchase - Form*  */
