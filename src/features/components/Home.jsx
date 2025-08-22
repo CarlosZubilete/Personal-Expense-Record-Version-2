@@ -1,9 +1,10 @@
-import React from "react";
-import { motion } from "framer-motion";
+import "../styles/Home.css";
+import { motion } from "motion/react";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
+import { GiCash } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
-import "../styles/Home.css"; // Import your new CSS file
-
+import { LuListTodo } from "react-icons/lu";
+import { IoGameController } from "react-icons/io5";
 // Sample data for the visual demo (replace with real data from your localStorage service)
 const sampleExpenses = [
   {
@@ -39,34 +40,34 @@ const sampleExpenses = [
 const COLORS = ["#8884d8", "#82ca9d", "#ffc658", "#ff7f7f"];
 
 // Small helper to aggregate by category for the pie chart
-const aggregateByCategory = (items) => {
-  const map = {};
-  items.forEach((it) => {
-    map[it.category] = (map[it.category] || 0) + Number(it.amount);
-  });
-  return Object.entries(map).map(([name, value]) => ({ name, value }));
-};
+// const aggregateByCategory = (items) => {
+//   const map = {};
+//   items.forEach((it) => {
+//     map[it.category] = (map[it.category] || 0) + Number(it.amount);
+//   });
+//   return Object.entries(map).map(([name, value]) => ({ name, value }));
+// };
 
 export const Home = () => {
   const navigate = useNavigate();
-  const pieData = aggregateByCategory(sampleExpenses);
+  // const pieData = aggregateByCategory(sampleExpenses);
 
-  const steps = [
+  const features = [
     {
       id: 1,
-      emoji: "💸",
+      icon: <GiCash className="home__feature-icon" />,
       title: "Agrega lo que gastas — rápido y simple",
       desc: "Toma solo segundos registrar un gasto y seguir en tu día.",
     },
     {
       id: 2,
-      emoji: "📊",
+      icon: <LuListTodo className="home__feature-icon" />,
       title: "Observa tus gastos organizarse solos",
       desc: "La lista y las cifras se actualizan al instante para que veas el panorama.",
     },
     {
       id: 3,
-      emoji: "🧘‍♂️",
+      icon: <IoGameController className="home__feature-icon" />,
       title: "Relájate — edita o elimina cuando quieras",
       desc: "Todo es reversible: corrige errores o elimina entradas fácilmente.",
     },
@@ -110,53 +111,55 @@ export const Home = () => {
           </motion.button>
         </motion.div>
       </section>
+
       {/* EXPLAINER FLOW */}
-      <section className="mt-12 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-        {steps.map((s, i) => (
-          <motion.article
-            key={s.id}
-            className="p-6 rounded-xl bg-white/70 dark:bg-gray-800/60 shadow-md"
-            initial={{
-              opacity: 0,
-              x: i === 0 ? -30 : i === 2 ? 30 : 0,
-              y: i === 1 ? 20 : 0,
-            }}
-            animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ delay: 0.2 + i * 0.25, duration: 0.5 }}
+      <section id="features" className="home__features">
+        {features.map((f) => (
+          <motion.div
+            key={f.id}
+            className="home__feature"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.05 }}
           >
-            <div className="text-3xl mb-3">{s.emoji}</div>
-            <h3 className="font-bold text-lg mb-2">{s.title}</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">{s.desc}</p>
-          </motion.article>
+            {f.icon}
+            <h3 className="home__feature-title">{f.title}</h3>
+            <p className="home__feature-desc">{f.desc}</p>
+          </motion.div>
         ))}
-      </section>{" "}
-      {/* FINAL CTA */}
-      <section className="mt-12 max-w-4xl mx-auto text-center py-10">
-        <motion.h4
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-lg font-semibold"
-        >
-          🚀 Listo para ver tu dinero con claridad. Vamos
-        </motion.h4>
-        <motion.button
-          className="mt-6 px-6 py-3 bg-emerald-500 text-white rounded-full font-semibold shadow-lg"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.96 }}
-          onClick={() => navigate("/purchase")}
-          aria-label="Comenzar a registrar gastos"
-        >
-          Iniciar seguimiento.
-        </motion.button>
       </section>
     </div>
   );
 };
 
-/* 
-    /* VISUAL DEMO *
+/*
+FINAL CTA 
+<section className="mt-12 max-w-4xl mx-auto text-center py-10">
+  <motion.h4
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="text-lg font-semibold"
+  >
+    🚀 Listo para ver tu dinero con claridad. Vamos
+  </motion.h4>
 
+</section>
+<motion.button
+  className="mt-6 px-6 py-3 bg-emerald-500 text-white rounded-full font-semibold shadow-lg"
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.96 }}
+  onClick={() => navigate("/purchase")}
+  aria-label="Comenzar a registrar gastos"
+>
+  Iniciar seguimiento.
+</motion.button>
+*/
+
+/* 
+/* VISUAL DEMO *
 <section className="mt-12 max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
   <div className="space-y-4">
     <h4 className="text-xl font-semibold">
@@ -166,7 +169,6 @@ export const Home = () => {
       Tu lista se muestra con nombre, monto y fecha. Todo simple para
       revisar en segundos.
     </p>
-
     <div className="space-y-3 mt-4">
       {sampleExpenses.map((e) => (
         <motion.div
@@ -187,7 +189,6 @@ export const Home = () => {
       ))}
     </div>
   </div>
-
   <div className="h-64 bg-white/60 dark:bg-gray-800/60 rounded-md p-2 shadow-md">
     <ResponsiveContainer width="100%" height="100%">
       <PieChart>
@@ -210,5 +211,4 @@ export const Home = () => {
     </ResponsiveContainer>
   </div>
 </section>
-
 */

@@ -1,6 +1,6 @@
 /* Container */
 .about-us {
-  background: var(--about-us-bg);
+  /* background: var(--about-us-bg); */
   color: var(--about-us-color);
   transition: background-color 0.35s ease, color 0.35s ease;
 }

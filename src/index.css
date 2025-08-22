@@ -102,12 +102,12 @@ html {
 
 .dark-mode {
   /* *Body* */
-  --bg-body-color: #0d1117;
-  --bg-body-gradient: linear-gradient(135deg, #0d1117, #161b22);
+  --bg-body-color: #121212;
+  --bg-body-gradient: linear-gradient(135deg, #0d1117, #121212);
   --text-body-color: #bcbcbc;
 
   /* *Home * */
-  --home-bg: #18181b;
+  --home-bg: #121212;
   --home-color-text: #e6e7eb;
   --home-color-primary: #6366f1;
   --home-color-primary-hover: #818cf8;
@@ -115,8 +115,8 @@ html {
   --home-color-text-shadow: rgba(99, 102, 241, 0.25);
 
   /* *Nav-bar* */
-  --navbar-bg: #1f1f1f;
-  --navbar-bg-shadow: rgba(255, 255, 255, 0.5);
+  --navbar-bg: #1f1f1f; /* 1f1f1f*/
+  /* --navbar-bg-shadow: rgba(255, 255, 255, 0.5); */
   --navbar-text: #e5e5e5;
   --navbar-text-hover: #fff;
 
@@ -168,7 +168,7 @@ html {
   --btn-edit-bg: #00296b;
   --btn-edit-border: #00296b;
   --btn-edit-text: rgba(255, 255, 255, 0.5);
-  --btn-edit-hover-bg: #00296b; /* mismo color, mantiene consistencia */
+  --btn-edit-hover-bg: #00296b;
 
   --btn-delete-bg: transparent;
   --btn-delete-border: #161b22;
