@@ -14,6 +14,32 @@ export default {
     return getAll();
   },
 
+  /*
+  sort: (sortOptions) => {
+    const list = getAll();
+
+    if (!sortOptions || Object.keys(sortOptions).length === 0) {
+      return list;
+    }
+
+    return [...list].sort((a, b) => {
+      const [field] = Object.keys(sortOptions);
+      const direction = sortOptions[field];
+
+      if (field === "price") {
+        return direction === 1 ? a.price - b.price : b.price - a.price;
+      }
+
+      if (field === "name") {
+        return direction === 1
+          ? a.name.localeCompare(b.name)
+          : b.name.localeCompare(a.name);
+      }
+
+      return 0;
+    });
+  },
+*/
   create: (values) => {
     const newPurchase = { ...values, _id: crypto.randomUUID() };
     const list = getAll();
