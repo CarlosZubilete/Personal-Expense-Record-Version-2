@@ -1,7 +1,6 @@
 .home-root {
   min-height: 100vh;
   padding: 2rem 1rem;
-  /* background-color: var(--home-bg); */
   color: var(--home-color-text);
 }
 
@@ -30,48 +29,126 @@
   justify-content: center;
 }
 
-/* *Feature* */
+/* Workflow Steps */
+.home__workflow {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.home__steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.home__step {
+  flex: 1;
+  min-width: 250px;
+  background: var(--card-bg);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.home__step:hover {
+  transform: translateY(-5px);
+}
+
+.home__step-number {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background: var(--home-color-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.home__step-icon {
+  font-size: 2.5rem;
+  color: var(--home-color-primary);
+  margin: 1rem 0;
+}
+
+.home__step-title {
+  font-size: 1.3rem;
+  margin: 1rem 0;
+  color: var(--home-color-text);
+}
+
+.home__step-desc {
+  font-size: 1rem;
+  color: var(--text-muted, #666);
+  line-height: 1.5;
+}
+
+/* Infinite loop icon animation */
+.infinite-icon {
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Features section */
 .home__features {
   display: flex;
   justify-content: center;
-  /* border: 1px solid red; */
   flex-wrap: wrap;
   padding: 2rem;
+  margin-top: 2rem;
+  gap: 2rem;
 }
 
 .home__feature {
-  /* border: 1px solid red; */
-  flex: 1 1 200px;
+  flex: 1 1 250px;
   max-width: 300px;
   text-align: center;
-  padding: 1rem;
-  margin: 0.5rem;
+  padding: 1.5rem;
   border-radius: 1rem;
   background: var(--card-bg);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .home__feature:hover {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
 }
 
 .home__feature-icon {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .home__feature-title {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   font-size: 1.2rem;
-  color: var(--home-color-text, #333);
+  color: var(--home-color-text);
 }
 
 .home__feature-desc {
   font-size: 1rem;
+  color: var(--text-muted, #666);
 }
 
-/* Continue for other sections... */
 .home-cta-btn {
   padding: 0.75rem 2rem;
   background: var(--home-color-primary);
@@ -81,49 +158,42 @@
   box-shadow: 0 2px 8px var(--home-color-shadow);
   border: none;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.3s ease;
 }
 
 .home-cta-btn:hover {
   background: var(--home-color-primary-hover);
+  transform: translateY(-2px);
 }
 
-/* Responsive */
-@media only screen and (max-width: 445px) {
-  .home__features {
-    display: flex;
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  .home__steps {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    padding: 2rem 1rem;
+  }
+
+  .home__step {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .home-title {
+    font-size: 2rem;
+  }
+
+  .home-desc {
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 445px) {
+  .home__features {
+    padding: 1rem;
   }
 
   .home__feature {
     width: 100%;
     max-width: 320px;
-    text-align: center;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    background: var(--card-bg, rgba(255, 255, 255, 0.9));
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
-  }
-
-  .home__feature-icon {
-    font-size: 2.2rem;
-    margin-bottom: 0.75rem;
-    color: var(--accent-color, #4f46e5);
-  }
-
-  .home__feature-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: var(--text-color, #111);
-  }
-
-  .home__feature-desc {
-    font-size: 0.95rem;
-    color: var(--text-muted, #555);
   }
 }

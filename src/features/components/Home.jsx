@@ -1,41 +1,19 @@
 import "../styles/Home.css";
 import { motion } from "motion/react";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
-import { GiCash } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
+import { GiCash } from "react-icons/gi";
 import { LuListTodo } from "react-icons/lu";
 import { IoGameController } from "react-icons/io5";
 // Sample data for the visual demo (replace with real data from your localStorage service)
-const sampleExpenses = [
-  {
-    id: 1,
-    name: "Café",
-    amount: 150,
-    date: "2025-08-20",
-    category: "Alimentación",
-  },
-  {
-    id: 2,
-    name: "Groceries",
-    amount: 3200,
-    date: "2025-08-19",
-    category: "Hogar",
-  },
-  {
-    id: 3,
-    name: "Transporte",
-    amount: 500,
-    date: "2025-08-18",
-    category: "Transporte",
-  },
-  {
-    id: 4,
-    name: "Película",
-    amount: 1200,
-    date: "2025-08-17",
-    category: "Ocio",
-  },
-];
+// import { features } from "./homeExample";
+import { Link } from "react-router-dom";
+import {
+  FaMoneyBillWave,
+  FaChartLine,
+  FaListAlt,
+  FaRecycle,
+} from "react-icons/fa";
 
 const COLORS = ["#8884d8", "#82ca9d", "#ffc658", "#ff7f7f"];
 
@@ -52,6 +30,7 @@ export const Home = () => {
   const navigate = useNavigate();
   // const pieData = aggregateByCategory(sampleExpenses);
 
+  // todo: replace with real features data from a constants file or create a homeExample.js file
   const features = [
     {
       id: 1,
@@ -75,7 +54,105 @@ export const Home = () => {
 
   return (
     <div className="home-root">
-      {/* HERO */}
+      <section className="home-hero">
+        <h1 className="home-title">Control Personal de Gastos</h1>
+        <p className="home-desc">
+          Gestiona tus gastos de manera eficiente y mantén el control de tus
+          finanzas personales
+        </p>
+        <div className="home-cta">
+          <Link to="/purchase-add">
+            <button className="home-cta-btn">Comenzar Ahora</button>
+          </Link>
+        </div>
+      </section>
+
+      <div className="home__workflow">
+        <div className="home__steps">
+          <div className="home__step">
+            <div className="home__step-number">1</div>
+            <div className="home__step-icon">
+              <FaMoneyBillWave />
+            </div>
+            <h3 className="home__step-title">Registra tus Gastos</h3>
+            <p className="home__step-desc">
+              Ingresa fácilmente tus compras y gastos diarios con detalles
+              completos
+            </p>
+          </div>
+
+          <div className="home__step">
+            <div className="home__step-number">2</div>
+            <div className="home__step-icon">
+              <FaListAlt />
+            </div>
+            <h3 className="home__step-title">Organiza y Filtra</h3>
+            <p className="home__step-desc">
+              Mantén tus gastos organizados y encuentra rápidamente lo que
+              buscas
+            </p>
+          </div>
+
+          <div className="home__step">
+            <div className="home__step-number">3</div>
+            <div className="home__step-icon">
+              <FaChartLine />
+            </div>
+            <h3 className="home__step-title">Visualiza tu Progreso</h3>
+            <p className="home__step-desc">
+              Observa patrones y tendencias en tus hábitos de gasto
+            </p>
+          </div>
+
+          <div className="home__step">
+            <div className="home__step-number">
+              <FaRecycle className="infinite-icon" />
+            </div>
+            <div className="home__step-icon">
+              <FaRecycle />
+            </div>
+            <h3 className="home__step-title">Mejora Continuamente</h3>
+            <p className="home__step-desc">
+              Ajusta tus hábitos basándote en los datos y mejora tu salud
+              financiera
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="home__features">
+        <div className="home__feature">
+          <div className="home__feature-icon">💰</div>
+          <h3 className="home__feature-title">Gestión Simple</h3>
+          <p className="home__feature-desc">
+            Interfaz intuitiva para registrar y gestionar tus gastos diarios
+          </p>
+        </div>
+
+        <div className="home__feature">
+          <div className="home__feature-icon">🔍</div>
+          <h3 className="home__feature-title">Búsqueda Avanzada</h3>
+          <p className="home__feature-desc">
+            Encuentra rápidamente cualquier gasto con nuestros filtros
+            inteligentes
+          </p>
+        </div>
+
+        <div className="home__feature">
+          <div className="home__feature-icon">📊</div>
+          <h3 className="home__feature-title">Organización Clara</h3>
+          <p className="home__feature-desc">
+            Mantén tus finanzas organizadas y fáciles de entender
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* 
+<div className="home-root">
+     
       <section className="home-hero">
         <motion.h1
           className="home-title"
@@ -112,7 +189,7 @@ export const Home = () => {
         </motion.div>
       </section>
 
-      {/* EXPLAINER FLOW */}
+    
       <section id="features" className="home__features">
         {features.map((f) => (
           <motion.div
@@ -131,84 +208,5 @@ export const Home = () => {
         ))}
       </section>
     </div>
-  );
-};
 
-/*
-FINAL CTA 
-<section className="mt-12 max-w-4xl mx-auto text-center py-10">
-  <motion.h4
-    initial={{ opacity: 0, y: 10 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
-    className="text-lg font-semibold"
-  >
-    🚀 Listo para ver tu dinero con claridad. Vamos
-  </motion.h4>
-
-</section>
-<motion.button
-  className="mt-6 px-6 py-3 bg-emerald-500 text-white rounded-full font-semibold shadow-lg"
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.96 }}
-  onClick={() => navigate("/purchase")}
-  aria-label="Comenzar a registrar gastos"
->
-  Iniciar seguimiento.
-</motion.button>
-*/
-
-/* 
-/* VISUAL DEMO *
-<section className="mt-12 max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-  <div className="space-y-4">
-    <h4 className="text-xl font-semibold">
-      Así se ven tus gastos en un lugar limpio
-    </h4>
-    <p className="text-sm text-gray-600 dark:text-gray-300">
-      Tu lista se muestra con nombre, monto y fecha. Todo simple para
-      revisar en segundos.
-    </p>
-    <div className="space-y-3 mt-4">
-      {sampleExpenses.map((e) => (
-        <motion.div
-          key={e.id}
-          className="flex justify-between items-center p-3 bg-white/60 dark:bg-gray-800/60 rounded-md shadow-sm"
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15 * e.id }}
-        >
-          <div>
-            <div className="font-medium">{e.name}</div>
-            <div className="text-xs text-gray-500">
-              {e.date} • {e.category}
-            </div>
-          </div>
-          <div className="font-semibold">${e.amount}</div>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-  <div className="h-64 bg-white/60 dark:bg-gray-800/60 rounded-md p-2 shadow-md">
-    <ResponsiveContainer width="100%" height="100%">
-      <PieChart>
-        <Pie
-          data={pieData}
-          dataKey="value"
-          nameKey="name"
-          outerRadius={80}
-          fill="#8884d8"
-        >
-          {pieData.map((entry, index) => (
-            <Cell
-              key={`cell-${index}`}
-              fill={COLORS[index % COLORS.length]}
-            />
-          ))}
-        </Pie>
-        <Tooltip formatter={(value) => `${value} ARS`} />
-      </PieChart>
-    </ResponsiveContainer>
-  </div>
-</section>
 */

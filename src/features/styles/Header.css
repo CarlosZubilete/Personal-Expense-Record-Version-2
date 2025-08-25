@@ -60,4 +60,9 @@
     display: block;
     margin-right: 1rem;
   }
+  /* .header__logo, */
+  .header__btn {
+    width: auto;
+    font-size: 1.8rem;
+  }
 }

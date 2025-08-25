@@ -2,29 +2,32 @@ import "../styles/PurchaseFilter.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { FormGroup, Input } from "reactstrap";
 
-export const PurchaseFilter = ({ handleFilterList, orderBy }) => {
+export const PurchaseFilter = ({ handleFilterList, orderBy, filterTxt }) => {
   // handle the form submission
   const handleSubmitPurchaseFilter = (values, { setSubmitting }) => {
     // console.log("Form Values:", values);
     const nextOrderBy = {};
-    if (values.name !== "0" && values.value !== "0") {
+    if (values.key !== "0" && values.value !== "0") {
       nextOrderBy.key = values.key;
       nextOrderBy.value = parseInt(values.value);
+
       handleFilterList({ key: nextOrderBy.key, value: nextOrderBy.value });
+
+      if (values.filterTxt.trim().length > 0) {
+        handleFilterList({ ...nextOrderBy, filterTxt: values.filterTxt });
+      }
+    } else if (values.filterTxt.trim().length > 0) {
+      handleFilterList({ filterTxt: values.filterTxt });
     }
 
-    //if (values.value !== "0") nextOrderBy.value = parseInt(values.value);
-
     setSubmitting(false);
-
-    // console.log("Next OrderBy:", nextOrderBy);
   };
 
   return (
     <div className="purchase-filter">
       <Formik
         initialValues={{
-          filter: "",
+          filterTxt: filterTxt || "",
           key: orderBy?.key || "",
           value: orderBy?.value || "",
         }}
@@ -40,12 +43,12 @@ export const PurchaseFilter = ({ handleFilterList, orderBy }) => {
               <Input
                 tag={Field}
                 type="text"
-                id="filter"
-                name="filter"
+                id="filterTxt"
+                name="filterTxt"
                 className="purchase-filter__input"
               />
               <ErrorMessage
-                name="filter"
+                name="filterTxt"
                 component="div"
                 className="purchase-filter__error"
               />
@@ -96,7 +99,7 @@ export const PurchaseFilter = ({ handleFilterList, orderBy }) => {
                 className="purchase-filter__btn purchase-filter__btn--reset"
                 onClick={() => {
                   resetForm();
-                  handleFilterList({ name: "", value: "" });
+                  handleFilterList({ key: "", value: "", filterTxt: "" });
                 }}
               >
                 {!isSubmitting ? "Limpiar filtros" : "Limpiando..."}
