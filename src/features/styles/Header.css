@@ -56,13 +56,20 @@
 }
 
 @media only screen and (max-width: 445px) {
+  .header {
+    border: 1px solid var(--navbar-bg);
+    height: 4rem;
+    padding: auto;
+  }
   .header__btn--menu {
     display: block;
     margin-right: 1rem;
   }
   /* .header__logo, */
   .header__btn {
+    /* border: 1px solid red; */
+    padding: auto;
     width: auto;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 }

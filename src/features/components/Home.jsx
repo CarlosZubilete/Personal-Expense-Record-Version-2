@@ -1,12 +1,12 @@
-import "../styles/Home.css";
-import { motion } from "motion/react";
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
-import { useNavigate } from "react-router-dom";
-import { GiCash } from "react-icons/gi";
-import { LuListTodo } from "react-icons/lu";
-import { IoGameController } from "react-icons/io5";
+// import { motion } from "motion/react";
+// import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
+// import { useNavigate } from "react-router-dom";
+// import { GiCash } from "react-icons/gi";
+// import { LuListTodo } from "react-icons/lu";
+// import { IoGameController } from "react-icons/io5";
 // Sample data for the visual demo (replace with real data from your localStorage service)
 // import { features } from "./homeExample";
+import "../styles/Home.css";
 import { Link } from "react-router-dom";
 import {
   FaMoneyBillWave,
@@ -15,7 +15,7 @@ import {
   FaRecycle,
 } from "react-icons/fa";
 
-const COLORS = ["#8884d8", "#82ca9d", "#ffc658", "#ff7f7f"];
+// const COLORS = ["#8884d8", "#82ca9d", "#ffc658", "#ff7f7f"];
 
 // Small helper to aggregate by category for the pie chart
 // const aggregateByCategory = (items) => {
@@ -27,30 +27,8 @@ const COLORS = ["#8884d8", "#82ca9d", "#ffc658", "#ff7f7f"];
 // };
 
 export const Home = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   // const pieData = aggregateByCategory(sampleExpenses);
-
-  // todo: replace with real features data from a constants file or create a homeExample.js file
-  const features = [
-    {
-      id: 1,
-      icon: <GiCash className="home__feature-icon" />,
-      title: "Agrega lo que gastas — rápido y simple",
-      desc: "Toma solo segundos registrar un gasto y seguir en tu día.",
-    },
-    {
-      id: 2,
-      icon: <LuListTodo className="home__feature-icon" />,
-      title: "Observa tus gastos organizarse solos",
-      desc: "La lista y las cifras se actualizan al instante para que veas el panorama.",
-    },
-    {
-      id: 3,
-      icon: <IoGameController className="home__feature-icon" />,
-      title: "Relájate — edita o elimina cuando quieras",
-      desc: "Todo es reversible: corrige errores o elimina entradas fácilmente.",
-    },
-  ];
 
   return (
     <div className="home-root">
@@ -149,6 +127,30 @@ export const Home = () => {
     </div>
   );
 };
+
+/*
+  // todo: replace with real features data from a constants file or create a homeExample.js file
+  const features = [
+    {
+      id: 1,
+      icon: <GiCash className="home__feature-icon" />,
+      title: "Agrega lo que gastas — rápido y simple",
+      desc: "Toma solo segundos registrar un gasto y seguir en tu día.",
+    },
+    {
+      id: 2,
+      icon: <LuListTodo className="home__feature-icon" />,
+      title: "Observa tus gastos organizarse solos",
+      desc: "La lista y las cifras se actualizan al instante para que veas el panorama.",
+    },
+    {
+      id: 3,
+      icon: <IoGameController className="home__feature-icon" />,
+      title: "Relájate — edita o elimina cuando quieras",
+      desc: "Todo es reversible: corrige errores o elimina entradas fácilmente.",
+    },
+  ];
+*/
 
 /* 
 <div className="home-root">

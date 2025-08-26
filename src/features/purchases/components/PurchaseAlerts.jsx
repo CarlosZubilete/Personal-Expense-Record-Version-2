@@ -9,13 +9,13 @@ const isDarkMode = () => {
   );
 };
 
-export const ShowSuccess = () => {
+export const ShowSuccess = ({ message } = {}) => {
   const dark = isDarkMode();
 
   MySweet.fire({
     // text: "You clicked the button!",
     icon: "success",
-    title: "Your work has been saved",
+    title: message,
     showConfirmButton: false,
     timer: 2000,
     background: dark ? "#1e1e1e" : "#fff",
@@ -29,13 +29,13 @@ export const ShowDelete = (purchase) => {
   return MySweet.fire({
     title: (
       <span>
-        Please type "<strong>{purchase.name}</strong>" to confirm
+        Por favor "<strong>{purchase.name}</strong>" para confirmar
       </span>
     ),
     input: "text",
     showCancelButton: true,
-    confirmButtonText: "Delete",
-    cancelButtonText: "Cancel",
+    confirmButtonText: "Eliminar",
+    cancelButtonText: "Cancelar",
     confirmButtonColor: "#d33",
     focusCancel: true,
     background: dark ? "#1e1e1e" : "#fff",

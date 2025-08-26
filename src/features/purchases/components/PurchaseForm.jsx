@@ -26,7 +26,7 @@ export const PurchaseForm = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (success) {
-      ShowSuccess();
+      ShowSuccess({ message: "Compra guardada con éxito" });
       navigate("/purchase-page");
     }
   }, [success, navigate]);

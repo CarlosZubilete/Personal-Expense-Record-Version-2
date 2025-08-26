@@ -7,7 +7,7 @@ export const PurchaseDeleteButton = ({ purchase, onDelete }) => {
 
     if (result.isConfirmed) {
       await onDelete?.(purchase._id);
-      ShowSuccess();
+      ShowSuccess({ message: "Compra eliminada con éxito" });
     }
   };
 
