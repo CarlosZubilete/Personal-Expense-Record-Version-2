@@ -49,7 +49,7 @@
 
 .purchase-page__title {
   /* border: 1px solid red; */
-  font-size: 2.5rem;
+  font-size: 2rem;
   letter-spacing: 0.1rem;
   text-decoration: underline;
   font-weight: 700;
@@ -120,7 +120,7 @@
   scroll-behavior: smooth;
 }
 
-/* Responsive adjustments */
+/**Responsive adjustments | 768 **/
 @media (max-width: 768px) {
   .purchase-page {
     /* border: 1px solid red; */
@@ -160,6 +160,7 @@
   }
 }
 
+/** RESPONSIVE | 425 **/
 @media (max-width: 425px) {
   .purchase-page__container {
     /* border: 1px solid red; */
@@ -173,7 +174,7 @@
   }
 
   .purchase-page__title {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     text-align: center;
   }
 

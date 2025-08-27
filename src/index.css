@@ -116,7 +116,7 @@ html {
 
   /* *Nav-bar* */
   --navbar-bg: #1f1f1f; /* 1f1f1f*/
-  /* --navbar-bg-shadow: rgba(255, 255, 255, 0.5); */
+  --navbar-bg-shadow: rgba(255, 255, 255, 0.2);
   --navbar-text: #e5e5e5;
   --navbar-text-hover: #fff;
 
@@ -128,13 +128,13 @@ html {
 
   /* *Button - add document* */
   --btn-addDocument-bg: #bb86fc;
-  /* --btn-addDocument-bg-shadow: rgba(255, 255, 255, 0.4); */
+  --btn-addDocument-bg-shadow: rgba(255, 255, 255, 0.2);
   --btn-addDocument-text: #e5e5e5;
 
   /* *Purchase - Form*  */
   --purchase-form-bg: #1f1f1f;
   --purchase-form-text: #efefef;
-  --form-bg-shadow: rgba(0, 0, 0, 0.5);
+  --form-bg-shadow: rgba(255, 255, 255, 0.2);
 
   /* *Purchase - Form | Inputs* */
   --input-bg: #212529;

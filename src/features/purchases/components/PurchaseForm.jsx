@@ -1,14 +1,6 @@
 import "../styles/PurchaseForm.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  FormGroup,
-  Input,
-  Label,
-} from "reactstrap";
+import { Container, Col, Button, FormGroup, Input, Label } from "reactstrap";
 import { PurchaseFormError } from "./PurchaseFormError";
 import { purchaseSchema } from "../schemas/purchaseSchema";
 import { Link, useParams, useNavigate } from "react-router-dom";
@@ -39,7 +31,7 @@ export const PurchaseForm = () => {
   // console.log("There is something into: purchase => ", purchase);
 
   return (
-    <Container className="d-flex justify-content-center">
+    <Container id="purchase-form__start">
       <Formik
         onSubmit={handlePurchaseForm}
         validationSchema={purchaseSchema}
@@ -48,19 +40,24 @@ export const PurchaseForm = () => {
       >
         {() => (
           <Form className="purchase-form">
-            <Col className="purchase-form__title">
-              <span className="purchase-form__title-text">Date: </span>
-              <span
-                aria-live="polite"
-                id="createdOn"
-                className="purchase-form__title-date"
-              >
-                {new Date().toLocaleDateString("es-AR", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </span>
+            <Col className="purchase-form__header">
+              <h2 className="purchase-form__title">
+                <strong>{purchase ? "Editar" : "Agregar"}</strong>
+              </h2>
+              <div className="purchase-form__title-date-container">
+                <span className="purchase-form__title-date"></span>
+                <span
+                  aria-live="polite"
+                  id="createdOn"
+                  className="purchase-form__title-date"
+                >
+                  {new Date().toLocaleDateString("es-AR", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </span>
+              </div>
             </Col>
             <Col>
               <FormGroup>
