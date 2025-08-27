@@ -16,13 +16,17 @@ export const PurchaseForm = () => {
   );
   // console.log("There is something params: id => ", params.id);
   const navigate = useNavigate();
+
   useEffect(() => {
     if (success) {
       ShowSuccess({ message: "Compra guardada con éxito" });
       navigate("/purchase-page");
     }
   }, [success, navigate]);
-
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" }); // o "auto"
+  }, []);
+  // initial values for formik
   const initialValues = {
     name: purchase?.name || "",
     price: purchase?.price || "",
