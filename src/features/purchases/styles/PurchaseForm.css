@@ -1,7 +1,13 @@
+#purchase-form__start {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+}
+
 .purchase-form {
   /* border: 1px solid red; */
   /* max-width: 800px; */
-  /* width: 70%; */
+  min-width: 60%;
   background-color: var(--purchase-form-bg);
   margin: 1rem;
   color: var(--text-body-color);
@@ -94,7 +100,25 @@
   color: var(--cancel-hover-text);
 }
 
+/* *RESPONSIVE* */
+@media only screen and (max-width: 767px) {
+  .purchase-form {
+    width: 80%;
+  }
+  .purchase-form__header {
+    /* border: 1px solid blueviolet; */
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+}
+
 @media only screen and (max-width: 445px) {
+  .purchase-form {
+    width: 100%;
+  }
   .purchase-form__header {
     /* border: 1px solid blueviolet; */
     padding: 0.5rem 0;

@@ -6,17 +6,18 @@ export const Footer = () => {
     <footer className="footer">
       <div className="footer__content">
         <section className="footer__section footer__about">
-          <h2 className="footer__title">Contact Us</h2>
-          <p className="footer__location">Argentina | Bs As | Tigre-Center</p>
+          <h2 className="footer__title">¡Conversemos! 📩</h2>
+          <p className="footer__location">📍 Tigre - Buenos Aires, Argentina</p>
           <p className="footer__email">
             <a href="mailto:carloszubiletesanhcez@gmail.com">
-              carloszubiletesanchez@gmail.com
+              ✉️ carloszubiletesanchez@gmail.com
             </a>
           </p>
           <p className="footer__message">
-            Thanks to see our website.
-            <br />
-            Si you like yours, ¡connect us!
+            Gracias por visitar nuestra aplicación.
+            <br /> <br />
+            ¿Querés empezar a organizar tus gastos de forma más simple?
+            <strong>¡Estamos a un mail de distancia!</strong>
           </p>
         </section>
         <section className="footer__section footer__links">
@@ -24,23 +25,23 @@ export const Footer = () => {
           <ul className="footer__list">
             <li>
               <Link to="/" className="footer__link">
-                Home
+                Inicio
               </Link>
             </li>
             <li>
               <Link to="/purchase-page" className="footer__link">
-                About
+                Compras
               </Link>
             </li>
             <li>
               <Link to="/about-us" className="footer__link">
-                Contact
+                Nosotros
               </Link>
             </li>
           </ul>
         </section>
         <section className="footer__section footer__social">
-          <h2 className="footer__title">Follow Us</h2>
+          <h2 className="footer__title">Siguenos</h2>
           <ul className="footer__social-list">
             <li>
               <a

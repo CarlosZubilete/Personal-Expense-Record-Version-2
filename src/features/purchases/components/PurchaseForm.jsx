@@ -23,9 +23,7 @@ export const PurchaseForm = () => {
       navigate("/purchase-page");
     }
   }, [success, navigate]);
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" }); // o "auto"
-  }, []);
+
   // initial values for formik
   const initialValues = {
     name: purchase?.name || "",
