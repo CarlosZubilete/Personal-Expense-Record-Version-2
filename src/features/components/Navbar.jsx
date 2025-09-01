@@ -17,7 +17,7 @@ export const Navbar = ({ toggleNavbar, navRef }) => {
             className="navigation__link"
             onClick={toggleNavbar}
           >
-            Compras
+            Gastos
           </Link>
         </li>
         <li className="navigation__item">

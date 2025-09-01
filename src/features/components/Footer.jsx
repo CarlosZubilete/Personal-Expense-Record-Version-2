@@ -6,18 +6,18 @@ export const Footer = () => {
     <footer className="footer">
       <div className="footer__content">
         <section className="footer__section footer__about">
-          <h2 className="footer__title">¡Conversemos! 📩</h2>
+          <h2 className="footer__title">¡Conversemos!</h2>
           <p className="footer__location">📍 Tigre - Buenos Aires, Argentina</p>
           <p className="footer__email">
             <a href="mailto:carloszubiletesanhcez@gmail.com">
-              ✉️ carloszubiletesanchez@gmail.com
+              📩 carloszubiletesanchez@gmail.com
             </a>
           </p>
           <p className="footer__message">
             Gracias por visitar nuestra aplicación.
             <br /> <br />
             ¿Querés empezar a organizar tus gastos de forma más simple?
-            <strong>¡Estamos a un mail de distancia!</strong>
+            <strong> ¡Estamos a un mail de distancia! </strong>
           </p>
         </section>
         <section className="footer__section footer__links">
@@ -65,7 +65,7 @@ export const Footer = () => {
             </li>
             <li>
               <a
-                href="https://linkedin.com/in/https://www.instagram.com/_zubiletecarlos/?next=%2F"
+                href="https://www.instagram.com/_zubiletecarlos/?next=%2F"
                 target="_blank"
                 rel="noreferrer"
                 className="footer__social-link"

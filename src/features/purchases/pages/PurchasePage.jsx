@@ -18,7 +18,7 @@ export const PurchasePage = () => {
       <div className="purchase-page__container">
         <aside className="purchase-page__sidebar">
           <div className="purchase-page__header">
-            <h4 className="purchase-page__title">Agregar compra</h4>
+            <h4 className="purchase-page__title">Agregar un gasto</h4>
             <Link to={"/purchase-add"} title="Add Purchase">
               <button className="purchase-page__btn">
                 <IoIosAddCircle className="purchase-page__icon" />
