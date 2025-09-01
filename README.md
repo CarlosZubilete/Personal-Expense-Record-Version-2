@@ -76,14 +76,6 @@ npm run build
    - Interfaz clara y fácil de entender
    - Acceso rápido a todas las funcionalidades
 
-## 🤝 Contribuir
-
-Las contribuciones son siempre bienvenidas. Por favor, lee las guías de contribución antes de enviar un pull request.
-
-## 📝 Licencia
-
-Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE.md](LICENSE.md) para detalles
-
 ## 👤 Autor
 
 **Carlos Zubilete**

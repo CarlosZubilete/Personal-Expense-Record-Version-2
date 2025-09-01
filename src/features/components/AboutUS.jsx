@@ -1,63 +1,118 @@
-import React from "react";
 import { motion } from "framer-motion";
 import "../styles/AboutUs.css";
 
 export const AboutUs = () => {
+  const container = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { staggerChildren: 0.14 } },
+  };
+  const item = { hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } };
+
   return (
-    <div className="about-us container-fluid">
-      {/* header */}
+    <div className="about-us page-container">
+      {/* HERO */}
       <motion.header
-        className="about-us__header text-center mb-5"
-        initial={{ opacity: 0, y: -20 }}
+        className="about-us__hero"
+        initial={{ opacity: 0, y: -12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="about-us__title">Sobre Nosotros</h1>
-        <p className="about-us__subtitle">
-          Esta aplicación nació con la idea de ayudarte a organizar tus gastos
-          de manera clara, simple y accesible.
+        <h1 className="about-us__title">Somos Control Personal de Gastos</h1>
+        <p className="about-us__lead">
+          Una app simple para registrar, entender y mejorar tus hábitos de
+          gasto. Rápida, directa y sin complicaciones.
         </p>
+
+        <div className="about-us__hero-ctas">
+          <a href="/purchase-add" className="btn btn-primary">
+            Probar demo
+          </a>
+          <a
+            href="https://github.com/CarlosZubilete/Personal-Expense-Record"
+            className="btn btn-ghost"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Ver código
+          </a>
+        </div>
       </motion.header>
 
-      {/* Main Section */}
-      <div className="row justify-content-center">
-        <motion.section
-          className="about-us__content col-12 col-md-8 d-flex flex-column align-items-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-        >
-          <h2 className="about-us__heading mb-3">Nuestra Historia</h2>
-          <p className="about-us__text mb-4">
-            Empezamos como un pequeño proyecto personal para aprender React y
-            rápidamente vimos el potencial de crear una herramienta práctica
-            para el día a día. Nuestro objetivo es que cualquiera pueda
-            registrar y visualizar sus gastos sin complicaciones.
+      {/* MAIN GRID */}
+      <motion.main
+        className="about-us__grid"
+        variants={container}
+        initial="hidden"
+        animate="show"
+      >
+        {/* LEFT: Story + Benefits */}
+        <motion.section className="about-us__panel" variants={item}>
+          <h2 className="about-us__heading">Nuestra historia</h2>
+          <p className="about-us__text">
+            Nacimos como un proyecto personal para aprender y resolver un
+            problema real: hacer el seguimiento de gastos personal accesible.
+            Empezamos con lo mínimo viable y hoy queremos ayudar a cualquiera a
+            tomar mejores decisiones con datos claros.
           </p>
 
-          <h2 className="about-us__heading mb-3">Tecnologías que usamos</h2>
-          <ul className="about-us__list mb-4">
-            <li className="about-us__list-item">⚛️ React con Vite</li>
-            <li className="about-us__list-item">
-              🎨 CSS con variables para dark mode
+          <h3 className="about-us__subheading">Por qué te sirve</h3>
+          <ul className="about-us__benefits">
+            <li>
+              <strong>Registrar en segundos:</strong> agrega gastos rápido y
+              vuelve a tu día.
             </li>
-            <li className="about-us__list-item">📦 React Router DOM</li>
-            <li className="about-us__list-item">
-              📊 Recharts para visualizaciones
+            <li>
+              <strong>Filtrar y ordenar:</strong> encuentra lo que buscás sin
+              perder tiempo.
             </li>
-            <li className="about-us__list-item">
-              ✨ Framer Motion para animaciones
+            <li>
+              <strong>Mejorar con datos:</strong> patrones simples que te ayudan
+              a ajustar hábitos.
             </li>
           </ul>
-
-          <h2 className="about-us__heading mb-3">Próximos pasos</h2>
-          <p className="about-us__text">
-            Planeamos agregar reportes más avanzados, integración con categorías
-            personalizadas y una experiencia de usuario aún más fluida. Queremos
-            que esta app evolucione contigo.
-          </p>
         </motion.section>
-      </div>
+
+        {/* RIGHT: Vision/Mission + Tech */}
+        <motion.aside
+          className="about-us__panel about-us__aside"
+          variants={item}
+        >
+          <div className="about-us__card">
+            <h3 className="about-us__small-heading">Misión</h3>
+            <p className="about-us__text small">
+              Hacer que controlar tus finanzas sea rápido, accesible y
+              entendible para todos.
+            </p>
+          </div>
+
+          <div className="about-us__card">
+            <h3 className="about-us__small-heading">Visión</h3>
+            <p className="about-us__text small">
+              Ser la herramienta preferida para personas que buscan simplicidad
+              y claridad en sus gastos.
+            </p>
+          </div>
+
+          <div className="about-us__card tech">
+            <h3 className="about-us__small-heading">Tecnologías</h3>
+            <div className="tech__list">
+              <span className="tech__chip">React + Vite</span>
+              <span className="tech__chip">CSS variables (Dark mode)</span>
+              <span className="tech__chip">React Router</span>
+              <span className="tech__chip">Framer Motion</span>
+              <span className="tech__chip">Local Storage</span>
+            </div>
+          </div>
+        </motion.aside>
+      </motion.main>
+
+      {/* FOOTER / CTA FINAL */}
+      <motion.footer className="about-us__footer" variants={item}>
+        <p className="about-us__final">
+          Si querés colaborar o ver el código, podés visitar el repositorio en
+          GitHub.
+        </p>
+      </motion.footer>
     </div>
   );
 };

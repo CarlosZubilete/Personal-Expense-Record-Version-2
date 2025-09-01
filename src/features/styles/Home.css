@@ -44,6 +44,12 @@
   flex-wrap: wrap;
 }
 
+/* .home__steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+} */
+
 .home__step {
   flex: 1;
   min-width: 250px;
@@ -97,6 +103,13 @@
 /* Infinite loop icon animation */
 .infinite-icon {
   animation: rotate 4s linear infinite;
+}
+
+.home__features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
 }
 
 @keyframes rotate {
