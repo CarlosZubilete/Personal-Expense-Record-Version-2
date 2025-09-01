@@ -7,12 +7,12 @@
 /* HERO */
 .about-us__hero {
   /* border: 1px solid red; */
-  max-width: 980px;
+  max-width: 61.125rem;
   margin: 0 auto 2rem;
   text-align: center;
 }
 .about-us__title {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin: 0;
   line-height: 1.05;
   color: var(--about-us-accent);
@@ -20,6 +20,7 @@
 }
 
 .about-us__lead {
+  /* border: 1px solid red; */
   margin-top: 0.6rem;
   color: var(--muted);
   max-width: 68ch;
@@ -29,6 +30,7 @@
 
 /* hero CTAs */
 .about-us__hero-ctas {
+  /* border: 1px solid red; */
   display: flex;
   gap: 1rem;
   justify-content: center;
@@ -57,7 +59,8 @@
 
 /* Grid main */
 .about-us__grid {
-  max-width: 1200px;
+  /* border: 1px solid red; */
+  max-width: 75rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr; /* mobile stack */
@@ -68,20 +71,24 @@
 
 /* Panels */
 .about-us__panel {
+  /* border: 1px solid red; */
   background: transparent;
 }
 .about-us__heading {
-  font-size: 1.125rem;
+  /* border: 1px solid red; */
+  font-size: 1.225rem;
   font-weight: 700;
   color: var(--about-us-color);
   margin-bottom: 0.5rem;
 }
 .about-us__subheading {
-  margin-top: 1.25rem;
+  /* border: 1px solid red; */
+  margin-top: 1.225rem;
   font-weight: 700;
   color: var(--accent);
 }
 .about-us__text {
+  /* border: 1px solid red; */
   color: var(--about-us-muted);
   line-height: 1.6;
   max-width: 66ch;
@@ -122,7 +129,8 @@
   box-shadow: 0 8px 20px var(--about-us-shadow-soft);
 }
 .about-us__small-heading {
-  font-size: 0.95rem;
+  /* border: 1px solid red; */
+  font-size: 1.1rem;
   margin-bottom: 0.4rem;
   color: var(--about-us-accent);
 }
@@ -142,9 +150,13 @@
 
 /* Footer */
 .about-us__footer {
-  max-width: 980px;
+  /* border: 1px solid red; */
+  max-width: 61.25rem;
   margin: 2rem auto 0;
+  display: flex;
+  justify-content: center;
   text-align: center;
+  /* font-size: 1.1rem; */
   color: var(--about-us-muted);
 }
 

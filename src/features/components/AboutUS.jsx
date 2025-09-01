@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import "../styles/AboutUs.css";
 
 export const AboutUs = () => {
@@ -24,9 +25,9 @@ export const AboutUs = () => {
         </p>
 
         <div className="about-us__hero-ctas">
-          <a href="/purchase-add" className="btn btn-primary">
-            Probar demo
-          </a>
+          <Link to="/purchase-add" className="btn btn-primary">
+            Probar ahora
+          </Link>
           <a
             href="https://github.com/CarlosZubilete/Personal-Expense-Record"
             className="btn btn-ghost"
@@ -97,10 +98,11 @@ export const AboutUs = () => {
             <h3 className="about-us__small-heading">Tecnologías</h3>
             <div className="tech__list">
               <span className="tech__chip">React + Vite</span>
-              <span className="tech__chip">CSS variables (Dark mode)</span>
               <span className="tech__chip">React Router</span>
               <span className="tech__chip">Framer Motion</span>
-              <span className="tech__chip">Local Storage</span>
+              <span className="tech__chip">Formik + Yup</span>
+              <span className="tech__chip">Reactstrap + bootstrap</span>
+              <span className="tech__chip">Sweet Alerts</span>
             </div>
           </div>
         </motion.aside>

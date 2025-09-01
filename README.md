@@ -1,8 +1,6 @@
-# Personal Expense Record
+# <img src="./src/assets/gastos.png" alt="Personal Expense Record" width="3%"> Personal Expense Record
 
 Una aplicación web moderna para el registro y gestión de gastos personales, diseñada para hacer el seguimiento financiero simple y efectivo.
-
-![Control Personal de Gastos](public/vite.svg)
 
 ## 🌟 Características
 
