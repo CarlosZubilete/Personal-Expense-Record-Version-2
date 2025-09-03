@@ -16,8 +16,8 @@ export const Footer = () => {
           <p className="footer__message">
             Gracias por visitar nuestra aplicación.
             <br /> <br />
-            ¿Querés empezar a organizar tus gastos de forma más simple?
-            <strong> ¡Estamos a un mail de distancia! </strong>
+            De tus sueños al mundo digital,
+            <strong> solo nos separa un click. </strong>
           </p>
         </section>
         <section className="footer__section footer__links">
@@ -30,7 +30,7 @@ export const Footer = () => {
             </li>
             <li>
               <Link to="/purchase-page" className="footer__link">
-                Compras
+                Gastos
               </Link>
             </li>
             <li>
