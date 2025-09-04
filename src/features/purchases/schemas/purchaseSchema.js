@@ -3,6 +3,8 @@ import { object, string, number, date } from "yup";
 
 export const purchaseSchema = object({
   name: string().required(),
-  price: number().required().positive(),
+  price: number("Ingrese solo números")
+    .required()
+    .positive("Ingrese un precio positivo"),
   createdOn: date().default(() => new Date().toISOString()),
 });

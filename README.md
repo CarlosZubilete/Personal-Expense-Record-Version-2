@@ -1,6 +1,6 @@
 # 💰 Personal Expense Record
 
-Say goodbye to money mysteries! A super-friendly web app that makes tracking your expenses as easy as ordering pizza online. Because managing your money should be fun, not a headache! 🎯
+Say goodbye to money mysteries! A super-friendly web app that makes tracking your expenses as easy as ordering pizza online. Because managing your money should be fun, not a headache!
 
 ## ✨ Why You'll Love It
 
@@ -10,6 +10,7 @@ Say goodbye to money mysteries! A super-friendly web app that makes tracking you
 - 🌙 Dark mode for your late-night budget planning sessions
 - 📱 Looks great on any device (from phones to desktop!)
 - ⚡ So intuitive, your grandma could use it!
+- Let's website [Personal-Expense](https://personal-control-de-gastos.netlify.app/)
 
 ## 🛠️ Tech Magic Under the Hood
 
@@ -80,7 +81,7 @@ Got some cool ideas? We'd love to see them! Just check out our contribution guid
 
 ## 📝 Legal Stuff
 
-MIT License - because sharing is caring! Check out [LICENSE.md](LICENSE.md) for the boring details.
+MIT License - This project is licensed under MIT. Free to learn, modify, and share.
 
 ## � Meet the Wizard Behind the Code
 

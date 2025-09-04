@@ -31,9 +31,17 @@ export const usePurchases = (id) => {
     setSuccess(false);
     setError(null);
 
+    // Trim the input values
+    const trimmedValues = {
+      ...values,
+      name: values.name.trim(),
+      price: values.price,
+      createdOn: values.createdOn,
+    };
+
     setTimeout(() => {
       try {
-        savePurchase(id, values);
+        savePurchase(id, trimmedValues);
         refreshPurchases();
         resetForm();
         setSuccess(true);

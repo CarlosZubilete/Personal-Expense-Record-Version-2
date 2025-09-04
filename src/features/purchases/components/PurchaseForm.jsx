@@ -64,14 +64,14 @@ export const PurchaseForm = () => {
             <Col>
               <FormGroup>
                 <Label for="name" className="purchase-form__label">
-                  Purchase
+                  Gasto
                 </Label>
                 <Field
                   name="name"
                   as={Input}
                   type="text"
                   id="name"
-                  placeholder="Write down your shopping"
+                  placeholder="Nombre del gasto"
                   className="purchase-form__input"
                 />
                 <ErrorMessage name="name" component={PurchaseFormError} />
@@ -79,7 +79,7 @@ export const PurchaseForm = () => {
             </Col>
             <Col>
               <Label for="price" className="purchase-form__label">
-                Price
+                Precio
               </Label>
               <FormGroup>
                 <Field
@@ -87,7 +87,7 @@ export const PurchaseForm = () => {
                   as={Input}
                   type="number"
                   id="price"
-                  placeholder="Write down how much cost is"
+                  placeholder="Precio del gasto"
                   className="purchase-form__input"
                 />
                 <ErrorMessage name="price" component={PurchaseFormError} />
@@ -99,7 +99,7 @@ export const PurchaseForm = () => {
                 color="primary"
                 className="purchase-form__actions-btn purchase-form__actions-btn--submit"
               >
-                {!submitting ? "Add" : "..."}
+                {!submitting ? "Agregar" : "..."}
               </Button>
               <Link
                 to={"/purchase-page"}
@@ -109,7 +109,7 @@ export const PurchaseForm = () => {
                   className="purchase-form__actions-btn purchase-form__actions-btn--cancel"
                   disabled={submitting}
                 >
-                  {submitting ? "...." : "Cancel"}
+                  {submitting ? "...." : "Cancelar"}
                 </Button>
               </Link>
             </Col>
