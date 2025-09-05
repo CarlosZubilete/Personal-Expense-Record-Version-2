@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { PurchaseForm } from "./features/purchases/components/PurchaseForm.jsx";
 import { PurchasePage } from "./features/purchases/pages/PurchasePage.jsx";
 //*Home*
-import { Home } from "./features/components/Home.jsx";
+import { HomePage } from "./features/home/pages/HomePage.jsx";
 //*About Us*
 import { AboutUs } from "./features/components/AboutUS.jsx";
 const router = createBrowserRouter([
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        Component: Home,
+        Component: HomePage,
       },
       {
         path: "/purchase-page",

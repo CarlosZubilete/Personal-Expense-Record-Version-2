@@ -1,0 +1,96 @@
+/* Workflow Steps */
+.home__workflow {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.home__steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.home__step {
+  flex: 1;
+  min-width: 250px;
+  background: var(--card-bg);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.home__step:hover {
+  transform: translateY(-5px);
+}
+
+.home__step-number {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background: var(--home-color-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.home__step-icon {
+  font-size: 2.5rem;
+  color: var(--home-color-primary);
+  margin: 1rem 0;
+}
+
+.home__step-title {
+  font-size: 1.3rem;
+  margin: 1rem 0;
+  color: var(--home-color-text);
+}
+
+.home__step-desc {
+  font-size: 1rem;
+  color: var(--text-muted, #666);
+  line-height: 1.5;
+}
+
+/* Infinite loop icon animation */
+.infinite-icon {
+  animation: rotate 4s linear infinite;
+}
+
+.home__features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .home__steps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home__step {
+    width: 100%;
+    max-width: 400px;
+  }
+}

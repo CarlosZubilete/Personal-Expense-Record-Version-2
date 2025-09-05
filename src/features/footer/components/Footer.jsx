@@ -5,6 +5,7 @@ export const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__content">
+        {/* FooterAbout */}
         <section className="footer__section footer__about">
           <h2 className="footer__title">¡Conversemos!</h2>
           <p className="footer__location">📍 Tigre - Buenos Aires, Argentina</p>
@@ -20,6 +21,7 @@ export const Footer = () => {
             <strong> solo nos separa un click. </strong>
           </p>
         </section>
+        {/* FooterLink */}
         <section className="footer__section footer__links">
           <h2 className="footer__title">Quick Links</h2>
           <ul className="footer__list">
@@ -40,6 +42,7 @@ export const Footer = () => {
             </li>
           </ul>
         </section>
+        {/* FooterSocial */}
         <section className="footer__section footer__social">
           <h2 className="footer__title">Siguenos</h2>
           <ul className="footer__social-list">
@@ -76,6 +79,7 @@ export const Footer = () => {
           </ul>
         </section>
       </div>
+      {/* FooterCopyRight */}
       <div className="footer__bottom">
         <p className="footer__copyright">
           © 2025 All rights reserved — Carlos Zubilete

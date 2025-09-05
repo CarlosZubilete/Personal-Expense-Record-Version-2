@@ -1,0 +1,5 @@
+.home-root {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  color: var(--home-color-text);
+}
