@@ -9,7 +9,7 @@ import { PurchasePage } from "./features/purchases/pages/PurchasePage.jsx";
 //*Home*
 import { HomePage } from "./features/home/pages/HomePage.jsx";
 //*About Us*
-import { AboutUs } from "./features/components/AboutUS.jsx";
+import { AboutUs } from "./features/about-us/components/AboutUs.jsx";
 const router = createBrowserRouter([
   {
     path: "/",

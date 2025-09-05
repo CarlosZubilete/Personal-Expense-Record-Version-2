@@ -1,8 +1,9 @@
 import "../styles/Header.css";
 import { FaBars, FaMoon, FaSun } from "react-icons/fa";
-import { Navbar } from "./Navbar";
 import { useRef } from "react";
-import Logo from "../../assets/spend-svg-com.svg";
+import Logo from "../../../assets/spend-svg-com.svg";
+import { NavBar } from "./NavBar";
+
 export const Header = ({ isDarkMode, toggleTheme }) => {
   const navRef = useRef();
   const toggleNavbar = () => {
@@ -23,7 +24,7 @@ export const Header = ({ isDarkMode, toggleTheme }) => {
         <FaBars />
       </button>
       {/* Menu */}
-      <Navbar toggleNavbar={toggleNavbar} navRef={navRef} />
+      <NavBar toggleNavbar={toggleNavbar} navRef={navRef} />
     </header>
   );
 };

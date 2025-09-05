@@ -1,8 +1,8 @@
-import "../styles/Navbar.css";
 import { FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import "../styles/NavBar.css";
 
-export const Navbar = ({ toggleNavbar, navRef }) => {
+export const NavBar = ({ toggleNavbar, navRef }) => {
   return (
     <nav className="navigation" ref={navRef}>
       <ul className="navigation__list">
