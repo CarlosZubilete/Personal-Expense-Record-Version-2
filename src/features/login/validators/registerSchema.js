@@ -4,13 +4,11 @@ export const registerSchema = Yup.object().shape({
   username: Yup.string()
     .min(3, "Username must be at least 3 characters")
     .required("Username is required"),
-  email: Yup.string()
-    .email("Invalid email address")
-    .required("Email is required"),
+  email: Yup.string().email("Email es inválido").required("Email es requerido"),
   password: Yup.string()
-    .min(6, "Password must be at least 6 characters")
-    .required("Password is required"),
+    .min(6, "Por lo menos 6 caracteres")
+    .required("Contraseña es requerida"),
   confirmPassword: Yup.string()
-    .oneOf([Yup.ref("password"), null], "Passwords must match")
-    .required("Confirm password is required"),
+    .oneOf([Yup.ref("password"), null], "Contraseñas no coinciden")
+    .required("Confirmar contraseña es requerido"),
 });

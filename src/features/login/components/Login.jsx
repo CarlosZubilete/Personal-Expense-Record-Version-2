@@ -4,34 +4,33 @@ import { useState } from "react";
 import "../styles/Login.css";
 import { loginSchema } from "../validators/loginSchema";
 import { registerSchema } from "../validators/registerSchema";
+import { useLogin } from "../hooks/useLogin";
 
 export const Login = () => {
   const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
 
-  const handleSubmit = (values, { setSubmitting }) => {
-    // Here you would typically make an API call to authenticate
-    console.log("Form values:", values);
-    setSubmitting(false);
-    // For demo purposes, just redirect to the main page
-    navigate("/purchase-page");
-  };
+  const { handleSubmitLogin, username, error } = useLogin();
 
   const handleDemoLogin = () => {
     // Demo mode - direct access
     navigate("/purchase-page");
   };
 
+  if (username) console.log("Username:", username);
+  if (error) console.log("Error:", error);
   return (
     <div className="login">
       <div className="login__container">
+        <h6>{username ? username : error}</h6>
+
         <h2 className="login__title">
           {isLogin ? "Iniciar Session" : "Crear una nueva cuenta"}
         </h2>
         <Formik
           initialValues={
             isLogin
-              ? { email: "", password: "" }
+              ? { username: "", password: "" }
               : {
                   username: "",
                   email: "",
@@ -40,55 +39,54 @@ export const Login = () => {
                 }
           }
           validationSchema={isLogin ? loginSchema : registerSchema}
-          onSubmit={handleSubmit}
+          onSubmit={handleSubmitLogin}
         >
           {({ isSubmitting }) => (
             <Form className="login__form">
               {!isLogin && (
                 <div className="login__form-group">
-                  <label htmlFor="username" className="login__label">
-                    Username
+                  <label htmlFor="email" className="login__label">
+                    Email
                   </label>
                   <Field
-                    type="text"
-                    name="username"
+                    type="email"
+                    name="email"
                     className="login__input"
-                    placeholder="Enter your username"
+                    placeholder="ejemplo123@gmail.com"
                   />
                   <ErrorMessage
-                    name="username"
-                    component="div"
+                    name="email"
+                    component="span"
                     className="login__error"
                   />
                 </div>
               )}
 
               <div className="login__form-group">
-                <label htmlFor="email" className="login__label">
-                  Email
+                <label htmlFor="username" className="login__label">
+                  Nombre de Usuario:
                 </label>
                 <Field
-                  type="email"
-                  name="email"
+                  type="text"
+                  name="username"
                   className="login__input"
-                  placeholder="Enter your email"
+                  placeholder="nombre de usuario"
                 />
                 <ErrorMessage
-                  name="email"
+                  name="username"
                   component="div"
                   className="login__error"
                 />
               </div>
-
               <div className="login__form-group">
                 <label htmlFor="password" className="login__label">
-                  Password
+                  Contraseña
                 </label>
                 <Field
                   type="password"
                   name="password"
                   className="login__input"
-                  placeholder="Enter your password"
+                  placeholder="Letras y números"
                 />
                 <ErrorMessage
                   name="password"
@@ -100,13 +98,13 @@ export const Login = () => {
               {!isLogin && (
                 <div className="login__form-group">
                   <label htmlFor="confirmPassword" className="login__label">
-                    Confirm Password
+                    Repetir Contraseña
                   </label>
                   <Field
                     type="password"
                     name="confirmPassword"
                     className="login__input"
-                    placeholder="Confirm your password"
+                    placeholder="Confirmar tu contraseña"
                   />
                   <ErrorMessage
                     name="confirmPassword"
