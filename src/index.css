@@ -98,6 +98,20 @@ html {
   --about-us-card-bg: var(--card-bg);
   --about-us-card-shadow: var(--card-bg-shadow);
   --about-us-shadow-soft: var(--shadow-light);
+
+  /* *User Menu* */
+  --user-menu-bg: #ffffff;
+  --user-menu-text: #2c3e50;
+  --user-menu-text-secondary: #6c757d;
+  --user-menu-hover-bg: #f8f9fa;
+  --user-menu-hover-text: #495057;
+  --user-menu-border: rgba(0, 0, 0, 0.125);
+  --user-menu-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --user-menu-btn-bg: rgba(255, 255, 255, 0.1);
+  --user-menu-btn-hover-bg: rgba(255, 255, 255, 0.2);
+  --user-menu-danger-text: #dc3545;
+  --user-menu-danger-hover-bg: #f8d7da;
+  --user-menu-danger-hover-text: #721c24;
 }
 
 .dark-mode {
@@ -188,6 +202,20 @@ html {
   --about-us-card-bg: #1e1e1e;
   --about-us-card-shadow: rgba(0, 0, 0, 0.6);
   --about-us-shadow-soft: rgba(0, 0, 0, 0.4);
+
+  /* *User Menu* */
+  --user-menu-bg: #2d3748;
+  --user-menu-text: #e2e8f0;
+  --user-menu-text-secondary: #a0aec0;
+  --user-menu-hover-bg: #4a5568;
+  --user-menu-hover-text: #ffffff;
+  --user-menu-border: rgba(255, 255, 255, 0.125);
+  --user-menu-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+  --user-menu-btn-bg: rgba(255, 255, 255, 0.05);
+  --user-menu-btn-hover-bg: rgba(255, 255, 255, 0.1);
+  --user-menu-danger-text: #fc8181;
+  --user-menu-danger-hover-bg: #553c4e;
+  --user-menu-danger-hover-text: #fed7d7;
 }
 
 body {

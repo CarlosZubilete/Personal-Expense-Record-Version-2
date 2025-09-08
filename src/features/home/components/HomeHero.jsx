@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Login } from "../../login/components/Login";
+import { Login } from "../../account/components/Login";
 import "../styles/HomeHero.css";
 export const HomeHero = () => {
   return (

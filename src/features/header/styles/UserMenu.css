@@ -1,0 +1,127 @@
+/* ===== User Menu ===== */
+.user-menu {
+  position: relative;
+  display: inline-block;
+}
+
+/* Button */
+.user-menu__btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--user-menu-btn-bg);
+  border: 1px solid var(--user-menu-border);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: var(--user-menu-text);
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.user-menu__btn:hover {
+  background: var(--user-menu-btn-hover-bg);
+}
+
+.user-menu__icon {
+  font-size: 1.3rem;
+}
+
+.user-menu__name {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Dropdown */
+.user-menu__dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: var(--user-menu-bg);
+  color: var(--user-menu-text);
+  border: 1px solid var(--user-menu-border);
+  border-radius: 0.5rem;
+  box-shadow: var(--user-menu-shadow);
+  width: 200px;
+  z-index: 100;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* List */
+.user-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem 0;
+}
+
+/* Items */
+.user-menu__item {
+  display: block;
+}
+
+.user-menu__item--divider {
+  border-top: 1px solid var(--user-menu-border);
+  margin-top: 0.25rem;
+  padding-top: 0.25rem;
+}
+
+.user-menu__link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--user-menu-text);
+  transition: background 0.2s, color 0.2s;
+}
+
+.user-menu__link:hover {
+  background: var(--user-menu-hover-bg);
+  color: var(--user-menu-hover-text);
+}
+
+.user-menu__item-icon {
+  font-size: 1rem;
+}
+
+/* Danger (Cerrar sesión) */
+.user-menu__link--danger {
+  color: var(--user-menu-danger-text);
+}
+
+.user-menu__link--danger:hover {
+  background: var(--user-menu-danger-hover-bg);
+  color: var(--user-menu-danger-hover-text);
+}
+
+/* ===== Responsividad ===== */
+@media (max-width: 480px) {
+  .user-menu__dropdown {
+    width: 100%;
+    right: 0;
+  }
+
+  .user-menu__btn {
+    padding: 0.5rem;
+  }
+
+  .user-menu__name {
+    display: none; /* solo ícono en pantallas chicas */
+  }
+}

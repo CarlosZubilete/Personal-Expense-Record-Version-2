@@ -3,6 +3,7 @@ import { FaBars, FaMoon, FaSun } from "react-icons/fa";
 import { useRef } from "react";
 import Logo from "../../../assets/spend-svg-com.svg";
 import { NavBar } from "./NavBar";
+import { UserMenu } from "./UserMenu";
 
 export const Header = ({ isDarkMode, toggleTheme }) => {
   const navRef = useRef();
@@ -19,6 +20,8 @@ export const Header = ({ isDarkMode, toggleTheme }) => {
       <button className="header__btn" onClick={toggleTheme}>
         {isDarkMode ? <FaSun /> : <FaMoon />}
       </button>
+      {/* User menu */}
+      <UserMenu />
       {/* Only shows mode responsive */}
       <button className="header__btn header__btn--menu" onClick={toggleNavbar}>
         <FaBars />

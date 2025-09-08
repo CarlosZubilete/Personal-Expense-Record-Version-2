@@ -1,48 +1,53 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import "../styles/Login.css";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useState } from "react";
 import { loginSchema } from "../validators/loginSchema";
 import { registerSchema } from "../validators/registerSchema";
-import { useLogin } from "../hooks/useLogin";
+import { useAuthContext } from "../context/useAuthContext";
 
 export const Login = () => {
-  const navigate = useNavigate();
+  const { error, handleSubmitLogin } = useAuthContext();
   const [isLogin, setIsLogin] = useState(true);
 
-  const { handleSubmitLogin, username, error } = useLogin();
-
-  const handleDemoLogin = () => {
-    // Demo mode - direct access
-    navigate("/purchase-page");
-  };
-
-  if (username) console.log("Username:", username);
-  if (error) console.log("Error:", error);
   return (
     <div className="login">
       <div className="login__container">
-        <h6>{username ? username : error}</h6>
+        {error && <div className="login__error-message">{error}</div>}
 
         <h2 className="login__title">
-          {isLogin ? "Iniciar Session" : "Crear una nueva cuenta"}
+          {isLogin ? "Iniciar Session" : "Crear una cuenta"}
         </h2>
         <Formik
-          initialValues={
-            isLogin
-              ? { username: "", password: "" }
-              : {
-                  username: "",
-                  email: "",
-                  password: "",
-                  confirmPassword: "",
-                }
-          }
+          initialValues={{
+            name: "",
+            username: "",
+            email: "",
+            password: "",
+            confirmPassword: "",
+          }}
           validationSchema={isLogin ? loginSchema : registerSchema}
           onSubmit={handleSubmitLogin}
         >
           {({ isSubmitting }) => (
             <Form className="login__form">
+              {!isLogin && (
+                <div className="login__form-group">
+                  <label htmlFor="name" className="login__label">
+                    Nombre Completo:
+                  </label>
+                  <Field
+                    type="text"
+                    name="name"
+                    className="login__input"
+                    placeholder="Nombre y Apellido"
+                  />
+                  <ErrorMessage
+                    name="name"
+                    component="span"
+                    className="login__error"
+                  />
+                </div>
+              )}
               {!isLogin && (
                 <div className="login__form-group">
                   <label htmlFor="email" className="login__label">
@@ -70,7 +75,7 @@ export const Login = () => {
                   type="text"
                   name="username"
                   className="login__input"
-                  placeholder="nombre de usuario"
+                  placeholder="Nombre de usuario"
                 />
                 <ErrorMessage
                   name="username"
@@ -120,14 +125,11 @@ export const Login = () => {
                   className="login__submit-btn"
                   disabled={isSubmitting}
                 >
-                  {isLogin ? "Iniciar" : "Registrar"}
-                </button>
-                <button
-                  type="button"
-                  className="login__demo-btn"
-                  onClick={handleDemoLogin}
-                >
-                  Entrar en modo prueba
+                  {isSubmitting
+                    ? "Cargando..."
+                    : isLogin
+                    ? "Iniciar"
+                    : "Registrar"}
                 </button>
               </div>
             </Form>
